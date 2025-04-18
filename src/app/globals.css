@@ -1,26 +1,60 @@
 @import "tailwindcss";
+@import "aos/dist/aos.css";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --black: #242424;
+  --white: #eeeeee;
+  --dark: #3a3a3a;
+  --green: #6ed46e;
+  --orange: #ff6b35;
+  --font-monserrat: "Monserrat", sans-serif;
+  --font-open-sans: "Open Sans", sans-serif;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  transition: all 0.5s ease;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--black);
+  color: var(--white);
+  font-family: var(--font-monserrat);
+}
+
+section {
+  min-height: calc(100vh - 72px);
+}
+
+.height-full {
+  min-height: calc(100vh - 72px);
+}
+
+@media (min-width: 768px) {
+  section {
+    min-height: calc(100vh - 82px);
+  }
+
+  .height-full {
+    min-height: calc(100vh - 82px);
+  }
+}
+
+@media (min-width: 1024px) {
+  section {
+    min-height: calc(100vh - 92px);
+  }
+
+  .height-full {
+    min-height: calc(100vh - 92px);
+  }
+}
+
+@media (min-width: 1280px) {
+  section {
+    min-height: calc(100vh - 102px);
+  }
+
+  .height-full {
+    height: calc(100vh - 102px);
+  }
 }

@@ -1,0 +1,24 @@
+.link {
+  position: relative;
+  text-decoration: none;
+  padding: 0.2rem 0;
+}
+
+.link::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(to right, var(--orange), var(--green));
+  transition: width 0.3s ease;
+}
+
+.link:hover::after {
+  width: 100%;
+}
+
+.link:hover {
+  color: var(--orange);
+}

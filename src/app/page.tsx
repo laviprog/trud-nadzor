@@ -1,103 +1,337 @@
+import Button from "@/components/button/Button";
+import Card from "@/components/card/Card";
 import Image from "next/image";
+import Link from "next/link";
+import { FaBolt, FaFire, FaHardHat } from "react-icons/fa";
+import { Service } from "./types";
+import ServiceCard from "@/components/card/ServiceCard";
+
+const advantages = [
+  {
+    icon: "🎓",
+    title: "7+ лет опыта",
+    description: "Сотни специалистов успешно сдали аттестацию с нашей помощью.",
+  },
+  {
+    icon: "📚",
+    title: "Актуальные материалы",
+    description: "Готовим по последним требованиям Ростехнадзора и ФНП.",
+  },
+  {
+    icon: "🧠",
+    title: "Онлайн-тестирование",
+    description:
+      "Проверьте свой уровень знаний прямо на сайте перед началом подготовки.",
+  },
+  {
+    icon: "⏰",
+    title: "Гибкий график",
+    description: "Учитесь в удобное время — доступ к материалам 24/7.",
+  },
+  {
+    icon: "🤝",
+    title: "Поддержка на всех этапах",
+    description: "Всегда на связи — помогаем с вопросами до самой аттестации.",
+  },
+  {
+    icon: "👨‍🏫",
+    title: "Индивидуальный подход",
+    description: "Адаптируем обучение под ваш профиль и опыт работы.",
+  },
+];
+
+export const services: Service[] = [
+  {
+    id: "heat",
+    title: "Теплоэнергетика",
+    icon: <FaFire />,
+    shortDescription:
+      "Подготовим к аттестации по всем разделам теплоэнергетики.",
+    duration: "3 дня",
+    format: "Онлайн",
+    target: "Инженеры, операторы котельных",
+    price: "4 900 ₽",
+    link: "/services/teploenergetika",
+    label: "🔥 Часто выбирают",
+    rating: 4,
+    reviewsCount: 96,
+  },
+  {
+    id: "electro",
+    title: "Электроэнергетика",
+    icon: <FaBolt />,
+    shortDescription: "Готовим к аттестации по электробезопасности и ПТЭЭП.",
+    duration: "4 дня",
+    format: "Смешанный",
+    target: "Электромонтёры, инженеры-энергетики",
+    price: "5 200 ₽",
+    link: "/services/electroenergetika",
+    rating: 5,
+    reviewsCount: 150,
+  },
+  {
+    id: "pb",
+    title: "Промышленная безопасность",
+    icon: <FaHardHat />,
+    shortDescription: "Подготовка к аттестации по ПБ, охране труда и ГОЧС.",
+    duration: "5 дней",
+    format: "Очно и онлайн",
+    target: "Ответственные за ПБ, специалисты ОТ",
+    price: "5 800 ₽",
+    link: "/services/prom-bezopasnost",
+    rating: 4,
+    reviewsCount: 72,
+  },
+];
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+    <>
+      <section className="bg-[var(--white)] flex justify-center">
+        <div className="w-[85%] xl:w-6xl height-full flex flex-col justify-around">
+          <div className="flex flex-col items-center gap-5">
+            <h1
+              data-aos="fade-right"
+              className="xl:text-5xl lg:text-4xl text-3xl font-bold text-center text-[var(--black)]"
+            >
+              Готовы к аттестации в Ростехнадзоре?
+            </h1>
+            <div className="md:hidden">
+              <p
+                data-aos-delay="200"
+                data-aos="fade-right"
+                className="text-[var(--black)] text-xl px-4 text-center"
+              >
+                Профессионально подготовим к аттестации в Ростехнадзоре по
+                основным направлениям
+              </p>
+            </div>
+          </div>
+          <div className="md:flex md:justify-between md:items-center">
+            <div className="xl:w-5/14 w-6/16">
+              <p
+                data-aos-delay="200"
+                data-aos="fade-right"
+                className="lg:ml-8 max-2xl:ml-12 text-[var(--black)] 2xl:text-3xl lg:text-2xl md:text-xl max-md:hidden"
+              >
+                Профессионально подготовим к аттестации в Ростехнадзоре по
+                основным направлениям
+              </p>
+            </div>
             <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
+              data-aos="fade-right"
+              data-aos-delay="300"
+              src="/arrow.png"
+              alt="Оранжевая стрелка"
+              width={276}
+              height={134}
+              className="xl:w-[90px] xl:h-[43px] max-xl:hidden"
+              priority
             />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+            <div
+              data-aos="fade-right"
+              data-aos-delay="400"
+              className="flex items-center max-md:w-full max-md:justify-center max-md:gap-5 max-sm:gap-2"
+            >
+              <div className="flex flex-col xl:gap-4 md:gap-3 max-md:gap-2 max-lg:max-w-[200px] max-sm:max-w-full">
+                <Link
+                  href="/uslugi/teploenergetika"
+                  className="flex flex-col items-center justify-center text-[var(--black)] py-3 px-5 max-lg:px-3 max-lg:py-2 max-md:py-1 max-md:px-1 max-sm:px-4 max-sm:py-2 rounded-xl cursor-pointer bg-white hover:bg-[var(--orange)] shadow-lg active:bg-[var(--orange)] focus:bg-[var(--orange)] text-center"
+                >
+                  <div className="xl:text-3xl text-xl max-sm:text-2xl">🔥</div>
+                  <h3 className="font-semibold 2xl:text-xl xl:text-lg lg:text-md max-lg:text-sm max-sm:text-base">
+                    Теплоэнергетика
+                  </h3>
+                </Link>
+                <Link
+                  href="/uslugi/elektroenergetika"
+                  className="flex flex-col items-center justify-center text-[var(--black)] py-3 px-5 max-lg:px-3 max-lg:py-2 max-md:py-1 max-md:px-1 max-sm:px-4 max-sm:py-2 rounded-xl cursor-pointer bg-white hover:bg-[var(--orange)] shadow-lg active:bg-[var(--orange)] focus:bg-[var(--orange)] text-center"
+                >
+                  <div className="xl:text-3xl text-xl max-sm:text-2xl">⚡</div>
+                  <h3 className="font-semibold 2xl:text-xl xl:text-lg lg:text-md max-lg:text-sm max-sm:text-base">
+                    Электроэнергетика
+                  </h3>
+                </Link>
+                <Link
+                  href="uslugi/promyshlennaya-bezopasnost"
+                  className="flex flex-col items-center justify-center text-[var(--black)] py-3 px-5 max-lg:px-3 max-lg:py-2 max-md:py-1 max-md:px-1 max-sm:px-4 max-sm:py-2 rounded-xl cursor-pointer bg-white hover:bg-[var(--orange)] shadow-lg active:bg-[var(--orange)] focus:bg-[var(--orange)] text-center"
+                >
+                  <div className="xl:text-3xl text-xl max-sm:text-2xl">🏭</div>
+                  <h3 className="font-semibold 2xl:text-xl xl:text-lg lg:text-md max-lg:text-sm max-sm:text-base">
+                    Промышленная безопасность
+                  </h3>
+                </Link>
+              </div>
+              <Image
+                data-aos="fade-right"
+                data-aos-delay="500"
+                src="/worker6.png"
+                alt="задумчивый работник в защитной каске"
+                width={500}
+                height={500}
+                className="xl:w-60 lg:w-55 max-lg:w-45 max-sm:hidden 2xl:w-65"
+                priority
+              />
+            </div>
+          </div>
+          <div className="flex md:justify-between max-md:justify-center">
+            <div className="flex items-center max-lg:w-1/2 max-md:w-full">
+              <Image
+                data-aos="fade-right"
+                data-aos-delay="400"
+                src="/worker5.png"
+                alt="радостный работник в защитной каске"
+                width={500}
+                height={500}
+                className="xl:w-60 lg:w-55 max-lg:hidden 2xl:w-65"
+                priority
+              />
+              <div
+                data-aos="fade-right"
+                data-aos-delay="500"
+                className="flex flex-col lg:gap-7 max-lg:gap-3 max-lg:w-full max-lg:p-4"
+              >
+                <Link href="#">
+                  <Button className="font-semibold bg-[var(--orange)] text-md xl:text-xl max-lg:text-sm max-sm:text-base hover:brightness-85 shadow-lg active:brightness-85 focus:brightness-85 w-full">
+                    Проверить уровень знаний
+                  </Button>
+                </Link>
+                <Link href="#">
+                  <Button className="font-semibold bg-[var(--green)] text-md xl:text-xl max-lg:text-sm max-sm:text-base hover:brightness-85 shadow-lg active:brightness-85 focus:brightness-85 w-full">
+                    Получить консультацию
+                  </Button>
+                </Link>
+              </div>
+            </div>
+            <div
+              data-aos="fade-right"
+              data-aos-delay="1000"
+              className="flex items-center gap-4 2xl:w-9/20 xl:w-2/5 lg:w-3/7 md:w-1/2 max-md:hidden"
+            >
+              <div className="text-gray-800 text-lg 2xl:text-2xl max-lg:text-sm italic border-l-4 p-4 border-[var(--orange)]">
+                Грамотная подготовка — залог успешной аттестации в
+                Ростехнадзоре!
+              </div>
+            </div>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
+      </section>
+
+      <section className="flex justify-center text-[var(--white)]">
+        <div className="w-[85%] xl:w-6xl height-full flex flex-col justify-around py-3">
+          <div className="flex flex-col items-center gap-5">
+            <h1
+              data-aos="fade-right"
+              className="xl:text-4xl text-3xl font-bold text-[var(--orange)] text-center"
+            >
+              Почему нам доверяют подготовку к аттестации?
+            </h1>
+            <p
+              data-aos="fade-left"
+              data-aos-delay="200"
+              className="lg:text-xl text-lg text-center"
+            >
+              Мы помогаем сдать аттестацию с первого раза — честно, эффективно и
+              по делу.
+            </p>
+          </div>
+          <div className="grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1">
+            {advantages.map((item, index) => (
+              <Card
+                data-aos="zoom-in"
+                data-aos-delay={`${index * 100}`}
+                key={index}
+                icon={item.icon}
+                title={item.title}
+                description={item.description}
+              />
+            ))}
+          </div>
+          <div className="sm:flex sm:justify-center max-sm:mx-10 max-lg:my-3">
+            <Link data-aos="zoom-in" data-aos-delay={`${100}`} href="#">
+              <Button className="font-semibold sm:px-20 bg-[var(--green)] text-xl max-md:text-lg hover:brightness-85 shadow-lg active:brightness-85 focus:brightness-85 w-full">
+                Получить консультацию
+              </Button>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      <section className="flex flex-col items-center justify-center bg-[var(--white)]">
+        <h1
+          data-aos="fade-up"
+          className="text-3xl font-bold text-center text-[var(--black)]"
         >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+          Hello world! This is a test page for the Next.js app with TypeScript
+          and Tailwind CSS.
+        </h1>
+      </section>
+
+      <section className="flex justify-center text-[var(--white)] py-10">
+      <div className="w-[85%] xl:w-6xl flex flex-col gap-8">
+        <div className="text-center space-y-3">
+          <h2 data-aos="fade-right" className="text-3xl xl:text-4xl font-bold text-[var(--orange)]">
+            Программы подготовки к аттестации
+          </h2>
+          <p data-aos="fade-left" className="lg:text-xl text-lg text-center text-[var(--white)]">
+            Выбирайте нужное направление и проходите подготовку с гарантией качества.
+          </p>
+        </div>
+
+        <div className="grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-6">
+          {services.map((service, index) => (
+            <ServiceCard
+              key={service.id}
+              service={service}
+              aos="zoom-in"
+              delay={`${index * 100}`}
+            />
+          ))}
+        </div>
+      </div>
+    </section>
+
+      <section className="flex justify-center py-16 bg-[var(--light-gray)] text-[var(--black)]">
+        <div className="w-[85%] xl:w-6xl flex flex-col gap-12">
+          {/* Заголовок */}
+          <div className="text-center max-w-3xl mx-auto">
+            <h2 className="text-3xl xl:text-4xl font-bold text-[var(--orange)]">
+              Программы подготовки к аттестации
+            </h2>
+            <p className="text-lg mt-4">
+              Подберём программу подготовки под ваше направление. Все курсы
+              соответствуют требованиям Ростехнадзора.
+            </p>
+          </div>
+
+          {/* Карточки услуг */}
+          <div className="grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-8">
+            {services.map((service, index) => (
+              <div
+                key={index}
+                className="bg-white p-6 rounded-xl shadow-md flex flex-col justify-between"
+                data-aos="fade-up"
+                data-aos-delay={`${index * 100}`}
+              >
+                <div>
+                  <h3 className="text-xl font-semibold mb-2">
+                    {service.title}
+                  </h3>
+                  <p className="text-sm text-gray-700 mb-4">
+                    {service.shortDescription}
+                  </p>
+                </div>
+                <Link
+                  href={service.link}
+                  className="text-[var(--orange)] font-semibold mt-auto hover:underline"
+                >
+                  Подробнее об услуге →
+                </Link>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+    </>
   );
 }
