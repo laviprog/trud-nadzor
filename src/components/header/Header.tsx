@@ -14,8 +14,8 @@ export default function Header() {
   };
 
   return (
-      <header className="fixed top-0 left-0 z-100 w-full py-1.5 bg-[var(--black)]">
-        <div className="max-w-[85%] xl:max-w-6xl flex items-center justify-between mx-auto">
+      <header className="w-full fixed top-0 left-0 z-100 py-1.5 bg-[var(--black)]">
+        <div className="w-[85%] xl:w-6xl flex items-center justify-between mx-auto">
           <Link href="/" replace={true}>
             <Image
               src="/logo.png"
@@ -42,9 +42,9 @@ export default function Header() {
                 : "max-md:opacity-0 max-md:-translate-y-4 max-md:pointer-events-none"
             } flex items-center max-md:absolute md:static max-md:w-full max-md:left-0 max-md:top-full max-md:bg-[var(--black)] lg:justify-between max-md:flex-col max-md:text-2xl text-xl md:gap-6 lg:text-2xl xl:text-[28px] lg:gap-10 xl:gap-18`}
           >
-            <HeaderLink href="#" onClick={() => isOpen && setIsOpen(false)}>Услуги</HeaderLink>
-            <HeaderLink href="#" onClick={() => isOpen && setIsOpen(false)}>Партнеры</HeaderLink>
-            <HeaderLink href="/otzyvy" onClick={() => isOpen && setIsOpen(false)}>Отзывы</HeaderLink>
+            <HeaderLink href="/#services" onClick={() => isOpen && setIsOpen(false)}>Услуги</HeaderLink>
+            <HeaderLink href="/#partners" onClick={() => isOpen && setIsOpen(false)}>Партнеры</HeaderLink>
+            <HeaderLink href="/#reviews" onClick={() => isOpen && setIsOpen(false)}>Отзывы</HeaderLink>
             <HeaderLink href="/kontakty" onClick={() => isOpen && setIsOpen(false)}>Контакты</HeaderLink>
             <HeaderLink href="/o-nas" onClick={() => isOpen && setIsOpen(false)}>О нас</HeaderLink>
           </nav>

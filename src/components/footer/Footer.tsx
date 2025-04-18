@@ -4,7 +4,7 @@ import FooterContact from "./FooterContact";
 
 export default function Footer() {
   return (
-    <footer className="max-w-[85%] xl:max-w-6xl mx-auto py-5">
+    <footer className="w-[85%] xl:w-6xl mx-auto py-5">
       <div className="grid grid-cols-1 gap-5 xl:gap-10 sm:grid-cols-2 lg:grid-cols-5">
         <FooterBranding />
         <FooterNav

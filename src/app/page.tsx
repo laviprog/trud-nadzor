@@ -40,7 +40,7 @@ const advantages = [
   },
 ];
 
-export const services: Service[] = [
+const services: Service[] = [
   {
     id: "heat",
     title: "Теплоэнергетика",
@@ -51,7 +51,7 @@ export const services: Service[] = [
     format: "Онлайн",
     target: "Инженеры, операторы котельных",
     price: "4 900 ₽",
-    link: "/services/teploenergetika",
+    link: "/uslugi/teploenergetika",
     label: "🔥 Часто выбирают",
     rating: 4,
     reviewsCount: 96,
@@ -65,7 +65,7 @@ export const services: Service[] = [
     format: "Смешанный",
     target: "Электромонтёры, инженеры-энергетики",
     price: "5 200 ₽",
-    link: "/services/electroenergetika",
+    link: "/uslugi/elektroenergetika",
     rating: 5,
     reviewsCount: 150,
   },
@@ -78,7 +78,7 @@ export const services: Service[] = [
     format: "Очно и онлайн",
     target: "Ответственные за ПБ, специалисты ОТ",
     price: "5 800 ₽",
-    link: "/services/prom-bezopasnost",
+    link: "/uslugi/promyshlennaya-bezopasnost",
     rating: 4,
     reviewsCount: 72,
   },
@@ -196,7 +196,7 @@ export default function Home() {
                     Проверить уровень знаний
                   </Button>
                 </Link>
-                <Link href="#">
+                <Link href="/#form">
                   <Button className="font-semibold bg-[var(--green)] text-md xl:text-xl max-lg:text-sm max-sm:text-base hover:brightness-85 shadow-lg active:brightness-85 focus:brightness-85 w-full">
                     Получить консультацию
                   </Button>
@@ -227,7 +227,7 @@ export default function Home() {
               Почему нам доверяют подготовку к аттестации?
             </h1>
             <p
-              data-aos="fade-left"
+              data-aos="fade-right"
               data-aos-delay="200"
               className="lg:text-xl text-lg text-center"
             >
@@ -257,79 +257,75 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="flex flex-col items-center justify-center bg-[var(--white)]">
-        <h1
-          data-aos="fade-up"
-          className="text-3xl font-bold text-center text-[var(--black)]"
-        >
-          Hello world! This is a test page for the Next.js app with TypeScript
-          and Tailwind CSS.
-        </h1>
+      <section className="flex justify-center bg-[var(--white)] text-[var(--black)]">
+        <div className="w-[85%] xl:w-6xl flex flex-col gap-8 items-center justify-center">
+          <h1 data-aos="fade-up" className="text-4xl font-bold text-center">
+            Как проходит обучение
+          </h1>
+        </div>
       </section>
 
-      <section className="flex justify-center text-[var(--white)] py-10">
-      <div className="w-[85%] xl:w-6xl flex flex-col gap-8">
-        <div className="text-center space-y-3">
-          <h2 data-aos="fade-right" className="text-3xl xl:text-4xl font-bold text-[var(--orange)]">
-            Программы подготовки к аттестации
-          </h2>
-          <p data-aos="fade-left" className="lg:text-xl text-lg text-center text-[var(--white)]">
-            Выбирайте нужное направление и проходите подготовку с гарантией качества.
-          </p>
-        </div>
-
-        <div className="grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-6">
-          {services.map((service, index) => (
-            <ServiceCard
-              key={service.id}
-              service={service}
-              aos="zoom-in"
-              delay={`${index * 100}`}
-            />
-          ))}
-        </div>
-      </div>
-    </section>
-
-      <section className="flex justify-center py-16 bg-[var(--light-gray)] text-[var(--black)]">
-        <div className="w-[85%] xl:w-6xl flex flex-col gap-12">
-          {/* Заголовок */}
-          <div className="text-center max-w-3xl mx-auto">
-            <h2 className="text-3xl xl:text-4xl font-bold text-[var(--orange)]">
+      <section
+        id="services"
+        className="flex justify-center text-[var(--white)] py-10"
+      >
+        <div className="w-[85%] xl:w-6xl flex flex-col justify-around">
+          <div className="flex flex-col items-center gap-5">
+            <h2
+              data-aos="fade-right"
+              className="text-3xl xl:text-4xl text-center font-bold text-[var(--orange)]"
+            >
               Программы подготовки к аттестации
             </h2>
-            <p className="text-lg mt-4">
-              Подберём программу подготовки под ваше направление. Все курсы
-              соответствуют требованиям Ростехнадзора.
+            <p
+              data-aos="fade-right"
+              className="lg:text-xl text-lg text-center text-[var(--white)]"
+            >
+              Выбирайте нужное направление и проходите подготовку с гарантией
+              качества.
             </p>
           </div>
 
-          {/* Карточки услуг */}
-          <div className="grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-8">
+          <div className="grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1">
             {services.map((service, index) => (
-              <div
-                key={index}
-                className="bg-white p-6 rounded-xl shadow-md flex flex-col justify-between"
-                data-aos="fade-up"
-                data-aos-delay={`${index * 100}`}
-              >
-                <div>
-                  <h3 className="text-xl font-semibold mb-2">
-                    {service.title}
-                  </h3>
-                  <p className="text-sm text-gray-700 mb-4">
-                    {service.shortDescription}
-                  </p>
-                </div>
-                <Link
-                  href={service.link}
-                  className="text-[var(--orange)] font-semibold mt-auto hover:underline"
-                >
-                  Подробнее об услуге →
-                </Link>
-              </div>
+              <ServiceCard
+                key={service.id}
+                service={service}
+                aos="zoom-in"
+                delay={`${index * 100}`}
+              />
             ))}
           </div>
+        </div>
+      </section>
+
+      <section
+        id="partners"
+        className="flex justify-center bg-[var(--white)] text-[var(--black)]"
+      >
+        <div className="w-[85%] xl:w-6xl flex flex-col gap-8 items-center justify-center">
+          <h1 data-aos="fade-up" className="text-4xl font-bold text-center">
+            Тут будут партнеры
+          </h1>
+        </div>
+      </section>
+
+      <section id="reviews" className="flex justify-center">
+        <div className="w-[85%] xl:w-6xl flex flex-col gap-8 items-center justify-center">
+          <h1 data-aos="fade-up" className="text-4xl font-bold text-center">
+            Тут будут отзывы в карточках
+          </h1>
+        </div>
+      </section>
+
+      <section
+        id="form"
+        className="flex justify-center bg-[var(--white)] text-[var(--black)]"
+      >
+        <div className="w-[85%] xl:w-6xl flex flex-col gap-8 items-center justify-center">
+          <h1 data-aos="fade-up" className="text-4xl font-bold text-center">
+            Тут будет форма с записью на консультацию и еще что-то
+          </h1>
         </div>
       </section>
     </>

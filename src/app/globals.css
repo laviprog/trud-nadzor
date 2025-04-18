@@ -15,6 +15,12 @@
   transition: all 0.5s ease;
 }
 
+
+
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background: var(--black);
   color: var(--white);
@@ -25,6 +31,10 @@ section {
   min-height: calc(100vh - 72px);
 }
 
+section[id] {
+  scroll-margin-top: 72px;
+}
+
 .height-full {
   min-height: calc(100vh - 72px);
 }
@@ -32,6 +42,10 @@ section {
 @media (min-width: 768px) {
   section {
     min-height: calc(100vh - 82px);
+  }
+
+  section[id] {
+    scroll-margin-top: 82px;
   }
 
   .height-full {
@@ -44,6 +58,10 @@ section {
     min-height: calc(100vh - 92px);
   }
 
+  section[id] {
+    scroll-margin-top: 92px;
+  }
+
   .height-full {
     min-height: calc(100vh - 92px);
   }
@@ -52,6 +70,10 @@ section {
 @media (min-width: 1280px) {
   section {
     min-height: calc(100vh - 102px);
+  }
+
+  section[id] {
+    scroll-margin-top: 102px;
   }
 
   .height-full {

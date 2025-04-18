@@ -13,15 +13,15 @@ type Props = {
 export default function ServiceCard({ service, aos = "fade-up", delay = "0" }: Props) {
   return (
     <div
-      className="relative bg-white p-6 rounded-xl shadow-md flex flex-col justify-between text-[var(--black)] hover:shadow-lg transition-shadow"
+      className="bg-white p-6 m-4 rounded-xl flex flex-col justify-between text-[var(--black)]"
       data-aos={aos}
       data-aos-delay={delay}
     >
-      {service.label && (
+      {/* {service.label && (
         <span className="absolute top-3 right-3 bg-[var(--orange)] text-white text-xs px-3 py-1 rounded-full font-medium">
           {service.label}
         </span>
-      )}
+      )} */}
 
       <div className="flex items-center gap-3 mb-4">
         <div className="text-4xl text-[var(--orange)]">{service.icon}</div>
