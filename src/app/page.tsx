@@ -2,87 +2,10 @@ import Button from "@/components/button/Button";
 import Card from "@/components/card/Card";
 import Image from "next/image";
 import Link from "next/link";
-import { FaBolt, FaFire, FaHardHat } from "react-icons/fa";
-import { Service } from "./types";
 import ServiceCard from "@/components/card/ServiceCard";
-
-const advantages = [
-  {
-    icon: "🎓",
-    title: "7+ лет опыта",
-    description: "Сотни специалистов успешно сдали аттестацию с нашей помощью.",
-  },
-  {
-    icon: "📚",
-    title: "Актуальные материалы",
-    description: "Готовим по последним требованиям Ростехнадзора и ФНП.",
-  },
-  {
-    icon: "🧠",
-    title: "Онлайн-тестирование",
-    description:
-      "Проверьте свой уровень знаний прямо на сайте перед началом подготовки.",
-  },
-  {
-    icon: "⏰",
-    title: "Гибкий график",
-    description: "Учитесь в удобное время — доступ к материалам 24/7.",
-  },
-  {
-    icon: "🤝",
-    title: "Поддержка на всех этапах",
-    description: "Всегда на связи — помогаем с вопросами до самой аттестации.",
-  },
-  {
-    icon: "👨‍🏫",
-    title: "Индивидуальный подход",
-    description: "Адаптируем обучение под ваш профиль и опыт работы.",
-  },
-];
-
-const services: Service[] = [
-  {
-    id: "heat",
-    title: "Теплоэнергетика",
-    icon: <FaFire />,
-    shortDescription:
-      "Подготовим к аттестации по всем разделам теплоэнергетики.",
-    duration: "3 дня",
-    format: "Онлайн",
-    target: "Инженеры, операторы котельных",
-    price: "4 900 ₽",
-    link: "/uslugi/teploenergetika",
-    label: "🔥 Часто выбирают",
-    rating: 4,
-    reviewsCount: 96,
-  },
-  {
-    id: "electro",
-    title: "Электроэнергетика",
-    icon: <FaBolt />,
-    shortDescription: "Готовим к аттестации по электробезопасности и ПТЭЭП.",
-    duration: "4 дня",
-    format: "Смешанный",
-    target: "Электромонтёры, инженеры-энергетики",
-    price: "5 200 ₽",
-    link: "/uslugi/elektroenergetika",
-    rating: 5,
-    reviewsCount: 150,
-  },
-  {
-    id: "pb",
-    title: "Промышленная безопасность",
-    icon: <FaHardHat />,
-    shortDescription: "Подготовка к аттестации по ПБ, охране труда и ГОЧС.",
-    duration: "5 дней",
-    format: "Очно и онлайн",
-    target: "Ответственные за ПБ, специалисты ОТ",
-    price: "5 800 ₽",
-    link: "/uslugi/promyshlennaya-bezopasnost",
-    rating: 4,
-    reviewsCount: 72,
-  },
-];
+import ConsultationForm from "@/components/form/ConsultationForm";
+import { advantages } from "@/data/advantages";
+import { services } from "@/data/services";
 
 export default function Home() {
   return (
@@ -136,7 +59,7 @@ export default function Home() {
               <div className="flex flex-col xl:gap-4 md:gap-3 max-md:gap-2 max-lg:max-w-[200px] max-sm:max-w-full">
                 <Link
                   href="/uslugi/teploenergetika"
-                  className="flex flex-col items-center justify-center text-[var(--black)] py-3 px-5 max-lg:px-3 max-lg:py-2 max-md:py-1 max-md:px-1 max-sm:px-4 max-sm:py-2 rounded-xl cursor-pointer bg-white hover:bg-[var(--orange)] shadow-lg active:bg-[var(--orange)] focus:bg-[var(--orange)] text-center"
+                  className="flex flex-col items-center justify-center text-[var(--black)] py-3 px-5 max-lg:px-3 max-lg:py-2 max-md:py-1 max-md:px-1 max-sm:px-4 max-sm:py-2 rounded-xl cursor-pointer bg-white hover:bg-[var(--orange)] shadow-lg active:bg-[var(--orange)] focus:bg-[var(--orange)] text-center transition-transform hover:scale-[1.04]"
                 >
                   <div className="xl:text-3xl text-xl max-sm:text-2xl">🔥</div>
                   <h3 className="font-semibold 2xl:text-xl xl:text-lg lg:text-md max-lg:text-sm max-sm:text-base">
@@ -145,7 +68,7 @@ export default function Home() {
                 </Link>
                 <Link
                   href="/uslugi/elektroenergetika"
-                  className="flex flex-col items-center justify-center text-[var(--black)] py-3 px-5 max-lg:px-3 max-lg:py-2 max-md:py-1 max-md:px-1 max-sm:px-4 max-sm:py-2 rounded-xl cursor-pointer bg-white hover:bg-[var(--orange)] shadow-lg active:bg-[var(--orange)] focus:bg-[var(--orange)] text-center"
+                  className="flex flex-col items-center justify-center text-[var(--black)] py-3 px-5 max-lg:px-3 max-lg:py-2 max-md:py-1 max-md:px-1 max-sm:px-4 max-sm:py-2 rounded-xl cursor-pointer bg-white hover:bg-[var(--orange)] shadow-lg active:bg-[var(--orange)] focus:bg-[var(--orange)] text-center transition-transform hover:scale-[1.04]"
                 >
                   <div className="xl:text-3xl text-xl max-sm:text-2xl">⚡</div>
                   <h3 className="font-semibold 2xl:text-xl xl:text-lg lg:text-md max-lg:text-sm max-sm:text-base">
@@ -154,7 +77,7 @@ export default function Home() {
                 </Link>
                 <Link
                   href="uslugi/promyshlennaya-bezopasnost"
-                  className="flex flex-col items-center justify-center text-[var(--black)] py-3 px-5 max-lg:px-3 max-lg:py-2 max-md:py-1 max-md:px-1 max-sm:px-4 max-sm:py-2 rounded-xl cursor-pointer bg-white hover:bg-[var(--orange)] shadow-lg active:bg-[var(--orange)] focus:bg-[var(--orange)] text-center"
+                  className="flex flex-col items-center justify-center text-[var(--black)] py-3 px-5 max-lg:px-3 max-lg:py-2 max-md:py-1 max-md:px-1 max-sm:px-4 max-sm:py-2 rounded-xl cursor-pointer bg-white hover:bg-[var(--orange)] shadow-lg active:bg-[var(--orange)] focus:bg-[var(--orange)] text-center transition-transform hover:scale-[1.04]"
                 >
                   <div className="xl:text-3xl text-xl max-sm:text-2xl">🏭</div>
                   <h3 className="font-semibold 2xl:text-xl xl:text-lg lg:text-md max-lg:text-sm max-sm:text-base">
@@ -191,13 +114,13 @@ export default function Home() {
                 data-aos-delay="500"
                 className="flex flex-col lg:gap-7 max-lg:gap-3 max-lg:w-full max-lg:p-4"
               >
-                <Link href="#">
-                  <Button className="font-semibold bg-[var(--orange)] text-md xl:text-xl max-lg:text-sm max-sm:text-base hover:brightness-85 shadow-lg active:brightness-85 focus:brightness-85 w-full">
+                <Link href="/testirovanie">
+                  <Button className="font-semibold bg-[var(--orange)] text-md xl:text-xl max-lg:text-sm max-sm:text-base hover:brightness-115 shadow-lg active:brightness-115 focus:brightness-115 w-full transition-transform hover:scale-[1.04]">
                     Проверить уровень знаний
                   </Button>
                 </Link>
                 <Link href="/#form">
-                  <Button className="font-semibold bg-[var(--green)] text-md xl:text-xl max-lg:text-sm max-sm:text-base hover:brightness-85 shadow-lg active:brightness-85 focus:brightness-85 w-full">
+                  <Button className="font-semibold bg-[var(--green)] text-md xl:text-xl max-lg:text-sm max-sm:text-base hover:brightness-115 shadow-lg active:brightness-115 focus:brightness-115 w-full transition-transform hover:scale-[1.04]">
                     Получить консультацию
                   </Button>
                 </Link>
@@ -249,7 +172,7 @@ export default function Home() {
           </div>
           <div className="sm:flex sm:justify-center max-sm:mx-10 max-lg:my-3">
             <Link data-aos="zoom-in" data-aos-delay={`${100}`} href="#">
-              <Button className="font-semibold sm:px-20 bg-[var(--green)] text-xl max-md:text-lg hover:brightness-85 shadow-lg active:brightness-85 focus:brightness-85 w-full">
+              <Button className="font-semibold sm:px-20 bg-[var(--green)] text-xl max-md:text-lg hover:brightness-115 shadow-lg active:brightness-115 focus:brightness-115 w-full">
                 Получить консультацию
               </Button>
             </Link>
@@ -323,9 +246,7 @@ export default function Home() {
         className="flex justify-center bg-[var(--white)] text-[var(--black)]"
       >
         <div className="w-[85%] xl:w-6xl flex flex-col gap-8 items-center justify-center">
-          <h1 data-aos="fade-up" className="text-4xl font-bold text-center">
-            Тут будет форма с записью на консультацию и еще что-то
-          </h1>
+          <ConsultationForm />
         </div>
       </section>
     </>
