@@ -19,7 +19,7 @@ export default function Card({ number, icon, title, description, ...rest }: Card
   return (
     <div
       {...rest}
-      data-aos-delay={isMobile ? "100" : `${number * 100}`}
+      data-aos-delay={isMobile ? "200" : `${number * 100}`}
       className="m-4 p-4 max-xl:p-3 max-xl:m-3 max-lg:m-2 max-lg:p-2 max-sm:mx-10 bg-[var(--white)] rounded-2xl shadow-md text-center hover:shadow-lg transition-shadow text-[var(--black)] border-5 border-[var(--green)]"
     >
       <div className="xl:text-4xl lg:text-3xl text-[26px]">{icon}</div>
