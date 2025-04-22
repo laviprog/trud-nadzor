@@ -162,7 +162,7 @@ export default function Home() {
             {advantages.map((item, index) => (
               <Card
                 data-aos="zoom-in"
-                data-aos-delay={`${index * 100}`}
+                number={index}
                 key={index}
                 icon={item.icon}
                 title={item.title}
