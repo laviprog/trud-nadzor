@@ -26,7 +26,7 @@ body {
 }
 
 section {
-  min-height: calc(100vh - 72px);
+  min-height: calc(100svh - 72px);
 }
 
 section[id] {
@@ -34,12 +34,12 @@ section[id] {
 }
 
 .height-full {
-  min-height: calc(100vh - 72px);
+  min-height: calc(100svh - 72px);
 }
 
 @media (min-width: 768px) {
   section {
-    min-height: calc(100vh - 82px);
+    min-height: calc(100svh - 82px);
   }
 
   section[id] {
@@ -47,13 +47,13 @@ section[id] {
   }
 
   .height-full {
-    min-height: calc(100vh - 82px);
+    min-height: calc(100svh - 82px);
   }
 }
 
 @media (min-width: 1024px) {
   section {
-    min-height: calc(100vh - 92px);
+    min-height: calc(100svh - 92px);
   }
 
   section[id] {
@@ -61,13 +61,13 @@ section[id] {
   }
 
   .height-full {
-    min-height: calc(100vh - 92px);
+    min-height: calc(100svh - 92px);
   }
 }
 
 @media (min-width: 1280px) {
   section {
-    min-height: calc(100vh - 102px);
+    min-height: calc(100svh - 102px);
   }
 
   section[id] {
@@ -75,6 +75,6 @@ section[id] {
   }
 
   .height-full {
-    height: calc(100vh - 102px);
+    height: calc(100svh - 102px);
   }
 }
