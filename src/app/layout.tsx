@@ -5,6 +5,7 @@ import AOSInitializer from "@/components/aos/AOSInitializer";
 import Header from "@/components/header/Header";
 import Footer from "@/components/footer/Footer";
 import ScrollToTopButton from "@/components/scroll/ScrollToTopButton";
+import SetClientHeight from "@/components/SetClientHeight";
 
 const montserrat = Montserrat({
   variable: "--font-montserrat",
@@ -39,6 +40,7 @@ export default function RootLayout({
       <body
         className={`${montserrat.variable} ${openSans.variable} ${playfairDisplay.variable} antialiased`}
       >
+        <SetClientHeight />
         <AOSInitializer />
         <Header />
         <main className="pt-18 md:pt-20.5 lg:pt-23 xl:pt-25.5">{children}</main>
