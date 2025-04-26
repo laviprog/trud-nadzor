@@ -1,5 +1,5 @@
-@import "tailwindcss";
-@import "aos/dist/aos.css";
+@import 'tailwindcss';
+@import 'aos/dist/aos.css';
 
 :root {
   --black: #242424;
@@ -7,8 +7,8 @@
   --dark: #3a3a3a;
   --green: #6ed46e;
   --orange: #ff6b35;
-  --font-monserrat: "Monserrat", sans-serif;
-  --font-open-sans: "Open Sans", sans-serif;
+  --font-monserrat: 'Monserrat', sans-serif;
+  --font-open-sans: 'Open Sans', sans-serif;
   --client-height: 100vh;
 }
 

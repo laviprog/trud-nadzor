@@ -7,5 +7,5 @@ export default function Contacts() {
         </h1>
       </div>
     </section>
-  )
+  );
 }

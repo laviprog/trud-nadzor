@@ -1,6 +1,6 @@
-import FooterBranding from "./FooterBranding";
-import FooterNav from "./FooterNav";
-import FooterContact from "./FooterContact";
+import FooterBranding from './FooterBranding';
+import FooterNav from './FooterNav';
+import FooterContact from './FooterContact';
 
 export default function Footer() {
   return (
@@ -10,19 +10,19 @@ export default function Footer() {
         <FooterNav
           title="О нас"
           items={[
-            { label: "Company History", href: "/" },
-            { label: "Meet the Team", href: "/" },
-            { label: "Employee Handbook", href: "/" },
-            { label: "Careers", href: "/" },
+            { label: 'Company History', href: '/' },
+            { label: 'Meet the Team', href: '/' },
+            { label: 'Employee Handbook', href: '/' },
+            { label: 'Careers', href: '/' },
           ]}
         />
         <FooterNav
           title="Сотрудничество"
           items={[
-            { label: "Web Development", href: "/" },
-            { label: "Web Design", href: "/" },
-            { label: "Marketing", href: "/" },
-            { label: "Google Ads", href: "/" },
+            { label: 'Web Development', href: '/' },
+            { label: 'Web Design', href: '/' },
+            { label: 'Marketing', href: '/' },
+            { label: 'Google Ads', href: '/' },
           ]}
         />
         <FooterContact />

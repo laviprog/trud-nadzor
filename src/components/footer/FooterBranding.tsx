@@ -1,5 +1,5 @@
-import Image from "next/image";
-import SocialLinks from "./SocialLinks";
+import Image from 'next/image';
+import SocialLinks from './SocialLinks';
 
 export default function FooterBranding() {
   return (

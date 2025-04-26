@@ -1,11 +1,11 @@
-import Button from "@/components/button/Button";
-import Card from "@/components/card/Card";
-import Image from "next/image";
-import Link from "next/link";
-import ServiceCard from "@/components/card/ServiceCard";
-import ConsultationForm from "@/components/form/ConsultationForm";
-import { advantages } from "@/data/advantages";
-import { services } from "@/data/services";
+import Button from '@/components/button/Button';
+import Card from '@/components/card/Card';
+import Image from 'next/image';
+import Link from 'next/link';
+import ServiceCard from '@/components/card/ServiceCard';
+import ConsultationForm from '@/components/form/ConsultationForm';
+import { advantages } from '@/data/advantages';
+import { services } from '@/data/services';
 
 export default function Home() {
   return (
@@ -25,8 +25,7 @@ export default function Home() {
                 data-aos="fade-right"
                 className="text-[var(--black)] text-xl px-4 text-center"
               >
-                Профессионально подготовим к аттестации в Ростехнадзоре по
-                основным направлениям
+                Профессионально подготовим к аттестации в Ростехнадзоре по основным направлениям
               </p>
             </div>
           </div>
@@ -37,8 +36,7 @@ export default function Home() {
                 data-aos="fade-right"
                 className="lg:ml-8 max-2xl:ml-12 text-[var(--black)] 2xl:text-3xl lg:text-2xl md:text-xl max-md:hidden"
               >
-                Профессионально подготовим к аттестации в Ростехнадзоре по
-                основным направлениям
+                Профессионально подготовим к аттестации в Ростехнадзоре по основным направлениям
               </p>
             </div>
             <Image
@@ -132,8 +130,7 @@ export default function Home() {
               className="flex items-center gap-4 2xl:w-9/20 xl:w-2/5 lg:w-3/7 md:w-1/2 max-md:hidden"
             >
               <div className="text-gray-800 text-lg 2xl:text-2xl max-lg:text-sm italic border-l-4 p-4 border-[var(--orange)]">
-                Грамотная подготовка — залог успешной аттестации в
-                Ростехнадзоре!
+                Грамотная подготовка — залог успешной аттестации в Ростехнадзоре!
               </div>
             </div>
           </div>
@@ -154,8 +151,7 @@ export default function Home() {
               data-aos-delay="200"
               className="lg:text-xl text-lg text-center"
             >
-              Мы помогаем сдать аттестацию с первого раза — честно, эффективно и
-              по делу.
+              Мы помогаем сдать аттестацию с первого раза — честно, эффективно и по делу.
             </p>
           </div>
           <div className="grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1">
@@ -188,10 +184,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section
-        id="services"
-        className="flex justify-center text-[var(--white)] py-10"
-      >
+      <section id="services" className="flex justify-center text-[var(--white)] py-10">
         <div className="w-[85%] xl:w-6xl flex flex-col justify-around">
           <div className="flex flex-col items-center gap-5">
             <h2
@@ -200,12 +193,8 @@ export default function Home() {
             >
               Программы подготовки к аттестации
             </h2>
-            <p
-              data-aos="fade-right"
-              className="lg:text-xl text-lg text-center text-[var(--white)]"
-            >
-              Выбирайте нужное направление и проходите подготовку с гарантией
-              качества.
+            <p data-aos="fade-right" className="lg:text-xl text-lg text-center text-[var(--white)]">
+              Выбирайте нужное направление и проходите подготовку с гарантией качества.
             </p>
           </div>
 
@@ -222,10 +211,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section
-        id="partners"
-        className="flex justify-center bg-[var(--white)] text-[var(--black)]"
-      >
+      <section id="partners" className="flex justify-center bg-[var(--white)] text-[var(--black)]">
         <div className="w-[85%] xl:w-6xl flex flex-col gap-8 items-center justify-center">
           <h1 data-aos="fade-up" className="text-4xl font-bold text-center">
             Тут будут партнеры
@@ -241,10 +227,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section
-        id="form"
-        className="flex justify-center bg-[var(--white)] text-[var(--black)]"
-      >
+      <section id="form" className="flex justify-center bg-[var(--white)] text-[var(--black)]">
         <div className="w-[85%] xl:w-6xl flex flex-col gap-8 items-center justify-center">
           <ConsultationForm />
         </div>

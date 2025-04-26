@@ -1,8 +1,8 @@
 // components/ServiceCard.tsx
-import React from "react";
-import Link from "next/link";
-import { FaStar } from "react-icons/fa";
-import { Service } from "@/types/types";
+import React from 'react';
+import Link from 'next/link';
+import { FaStar } from 'react-icons/fa';
+import { Service } from '@/types/types';
 
 type Props = {
   service: Service;
@@ -10,11 +10,7 @@ type Props = {
   delay?: string;
 };
 
-export default function ServiceCard({
-  service,
-  aos = "fade-up",
-  delay = "0",
-}: Props) {
+export default function ServiceCard({ service, aos = 'fade-up', delay = '0' }: Props) {
   return (
     <div
       className="bg-white p-6 m-4 rounded-xl flex flex-col justify-between text-[var(--black)]"
@@ -34,9 +30,7 @@ export default function ServiceCard({
 
       <p className="text-sm text-gray-700 mb-2">{service.shortDescription}</p>
       <p className="text-sm text-gray-500 mb-1">Формат: {service.format}</p>
-      <p className="text-sm text-gray-500 mb-1">
-        Длительность: {service.duration}
-      </p>
+      <p className="text-sm text-gray-500 mb-1">Длительность: {service.duration}</p>
       <p className="text-sm text-gray-500 mb-1">Для: {service.target}</p>
 
       {service.rating && (
@@ -44,20 +38,14 @@ export default function ServiceCard({
           {Array.from({ length: 5 }).map((_, i) => (
             <FaStar
               key={i}
-              className={`text-sm ${
-                service.rating ? "text-yellow-400" : "text-gray-300"
-              }`}
+              className={`text-sm ${service.rating ? 'text-yellow-400' : 'text-gray-300'}`}
             />
           ))}
-          <span className="text-xs text-gray-600">
-            ({service.reviewsCount} отзывов)
-          </span>
+          <span className="text-xs text-gray-600">({service.reviewsCount} отзывов)</span>
         </div>
       )}
 
-      <p className="text-md font-semibold mt-4 text-[var(--black)]">
-        от {service.price}
-      </p>
+      <p className="text-md font-semibold mt-4 text-[var(--black)]">от {service.price}</p>
 
       <Link
         href={service.link}

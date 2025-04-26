@@ -1,5 +1,5 @@
-import { NextResponse } from "next/server";
-import { sendEmail } from "@/lib/sendEmail";
+import { NextResponse } from 'next/server';
+import { sendEmail } from '@/lib/sendEmail';
 
 export async function POST(req: Request) {
   try {
@@ -17,13 +17,13 @@ export async function POST(req: Request) {
 
     const res = await sendEmail({
       to: email,
-      subject: `Результат теста: ${testTitle}`,
+      subject: `Результат тестирования по направлению "${testTitle.toLowerCase()}"`,
       html,
     });
 
     return NextResponse.json(res);
   } catch (error) {
-    console.error("Ошибка:", error);
+    console.error('Ошибка:', error);
     return NextResponse.json({ success: false }, { status: 500 });
   }
 }

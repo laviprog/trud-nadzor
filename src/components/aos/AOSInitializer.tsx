@@ -1,8 +1,8 @@
-"use client";
+'use client';
 
-import { useEffect } from "react";
-import AOS from "aos";
-import "aos/dist/aos.css";
+import { useEffect } from 'react';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 export default function AOSInitializer() {
   useEffect(() => {
@@ -11,7 +11,7 @@ export default function AOSInitializer() {
 
     AOS.init({
       duration: 800,
-      easing: "ease-out-cubic",
+      easing: 'ease-out-cubic',
       once: false,
       offset: offset,
     });

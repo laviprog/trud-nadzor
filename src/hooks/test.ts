@@ -1,7 +1,7 @@
-"use client";
+'use client';
 
-import { Question } from "@/types/types";
-import { useEffect, useState } from "react";
+import { Question } from '@/types/types';
+import { useEffect, useState } from 'react';
 
 export const useTest = (questions: Question[], key: string) => {
   const [answers, setAnswers] = useState<number[]>([]);
@@ -54,4 +54,3 @@ export const useTest = (questions: Question[], key: string) => {
     isFinished,
   };
 };
-

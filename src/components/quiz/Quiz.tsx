@@ -1,8 +1,8 @@
-"use client";
+'use client';
 
-import { useTest } from "@/hooks/test";
-import { Question } from "@/types/types";
-import { AnimatePresence, motion } from "framer-motion";
+import { useTest } from '@/hooks/test';
+import { Question } from '@/types/types';
+import { AnimatePresence, motion } from 'framer-motion';
 
 export default function Quiz({
   questions,
@@ -44,7 +44,7 @@ export default function Quiz({
                 initial={{ opacity: 0, scale: 0.95 }}
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.95 }}
-                transition={{ duration: 0.4, ease: "easeInOut" }}
+                transition={{ duration: 0.4, ease: 'easeInOut' }}
                 className="text-center space-y-6 mt-5"
               >
                 <h2 className="text-2xl font-semibold">🎉 Тест завершён!</h2>
@@ -62,16 +62,14 @@ export default function Quiz({
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.9 }}
-                transition={{ duration: 0.4, ease: "easeInOut" }}
+                transition={{ duration: 0.4, ease: 'easeInOut' }}
                 className="w-full space-y-6"
               >
                 <div className="text-lg font-medium">
                   <span className="text-gray-500">
                     Вопрос {currentQuestionIndex + 1} из {questions.length}:
                   </span>
-                  <h3 className="mt-2 text-xl font-semibold">
-                    {currentQuestion.text}
-                  </h3>
+                  <h3 className="mt-2 text-xl font-semibold">{currentQuestion.text}</h3>
                 </div>
 
                 <ul className="flex flex-col gap-4">
