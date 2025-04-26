@@ -74,7 +74,7 @@ export default function Home() {
                   </h3>
                 </Link>
                 <Link
-                  href="uslugi/promyshlennaya-bezopasnost"
+                  href="/uslugi/promyshlennaya-bezopasnost"
                   className="flex flex-col items-center justify-center text-[var(--black)] py-3 px-5 max-lg:px-3 max-lg:py-2 max-md:py-1 max-md:px-1 max-sm:px-4 max-sm:py-2 rounded-xl cursor-pointer bg-white hover:bg-[var(--orange)] shadow-lg active:bg-[var(--orange)] focus:bg-[var(--orange)] text-center transition-transform hover:scale-[1.04]"
                 >
                   <div className="xl:text-3xl text-xl max-sm:text-2xl">🏭</div>
@@ -168,7 +168,7 @@ export default function Home() {
           </div>
           <div className="sm:flex sm:justify-center max-sm:mx-10 max-lg:my-3">
             <Link data-aos="zoom-in" data-aos-delay={`${100}`} href="#">
-              <Button className="font-semibold sm:px-20 bg-[var(--green)] text-xl max-md:text-lg hover:brightness-115 shadow-lg active:brightness-115 focus:brightness-115 w-full">
+              <Button className="font-semibold sm:px-20 bg-[var(--green)] text-xl max-md:text-lg hover:brightness-115 shadow-lg active:brightness-115 focus:brightness-115 transition-transform hover:scale-[1.04] w-full">
                 Получить консультацию
               </Button>
             </Link>

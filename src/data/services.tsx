@@ -1,5 +1,5 @@
 import { FaBolt, FaFire, FaHardHat } from 'react-icons/fa';
-import { Service } from '../types/types';
+import { Service } from '@/types/types';
 
 export const ServiceData = {
   teploenergetika: {
