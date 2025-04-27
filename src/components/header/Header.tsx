@@ -4,7 +4,6 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useState } from 'react';
 import HeaderLink from './HeaderLink';
-import { Menu, X } from 'lucide-react';
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -26,13 +25,26 @@ export default function Header() {
             priority
           />
         </Link>
-
         <button
-          className="md:hidden text-5xl focus:outline-none"
+          className="relative w-10 h-10 flex flex-col justify-center items-center md:hidden focus:outline-none"
           onClick={toggleMenu}
           aria-label="Меню"
         >
-          {isOpen ? <X size={45} /> : <Menu size={45} />}
+          <span
+            className={`block absolute h-[3px] w-8 bg-white transform transition-all duration-300 ease-in-out ${
+              isOpen ? 'rotate-45 top-4' : 'top-2'
+            }`}
+          ></span>
+          <span
+            className={`block absolute h-[3px] w-8 bg-white transition-all duration-300 ease-in-out ${
+              isOpen ? 'opacity-0' : 'opacity-100 top-5'
+            }`}
+          ></span>
+          <span
+            className={`block absolute h-[3px] w-8 bg-white transform transition-all duration-300 ease-in-out ${
+              isOpen ? '-rotate-45 top-4' : 'top-8'
+            }`}
+          ></span>
         </button>
 
         <nav
