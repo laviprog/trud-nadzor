@@ -1,11 +1,14 @@
-import Button from "@/components/button/Button";
-import Card from "@/components/card/Card";
-import Image from "next/image";
-import Link from "next/link";
-import ServiceCard from "@/components/card/ServiceCard";
-import ConsultationForm from "@/components/form/ConsultationForm";
-import { advantages } from "@/data/advantages";
-import { services } from "@/data/services";
+import Button from '@/components/button/Button';
+import Card from '@/components/card/Card';
+import Image from 'next/image';
+import Link from 'next/link';
+import ServiceCard from '@/components/card/ServiceCard';
+import ConsultationForm from '@/components/form/ConsultationForm';
+import { advantages } from '@/data/advantages';
+import { services } from '@/data/services';
+import { PartnersCarousel } from '@/components/carousel/PartnersCarousel';
+import { ReviewsCarousel } from '@/components/carousel/ReviewsCarousel';
+import FAQ from '@/components/faq/FAQ';
 
 export default function Home() {
   return (
@@ -25,8 +28,7 @@ export default function Home() {
                 data-aos="fade-right"
                 className="text-[var(--black)] text-xl px-4 text-center"
               >
-                Профессионально подготовим к аттестации в Ростехнадзоре по
-                основным направлениям
+                Профессионально подготовим к аттестации в Ростехнадзоре по основным направлениям
               </p>
             </div>
           </div>
@@ -37,8 +39,7 @@ export default function Home() {
                 data-aos="fade-right"
                 className="lg:ml-8 max-2xl:ml-12 text-[var(--black)] 2xl:text-3xl lg:text-2xl md:text-xl max-md:hidden"
               >
-                Профессионально подготовим к аттестации в Ростехнадзоре по
-                основным направлениям
+                Профессионально подготовим к аттестации в Ростехнадзоре по основным направлениям
               </p>
             </div>
             <Image
@@ -76,7 +77,7 @@ export default function Home() {
                   </h3>
                 </Link>
                 <Link
-                  href="uslugi/promyshlennaya-bezopasnost"
+                  href="/uslugi/promyshlennaya-bezopasnost"
                   className="flex flex-col items-center justify-center text-[var(--black)] py-3 px-5 max-lg:px-3 max-lg:py-2 max-md:py-1 max-md:px-1 max-sm:px-4 max-sm:py-2 rounded-xl cursor-pointer bg-white hover:bg-[var(--orange)] shadow-lg active:bg-[var(--orange)] focus:bg-[var(--orange)] text-center transition-transform hover:scale-[1.04]"
                 >
                   <div className="xl:text-3xl text-xl max-sm:text-2xl">🏭</div>
@@ -88,7 +89,7 @@ export default function Home() {
               <Image
                 data-aos="fade-right"
                 data-aos-delay="500"
-                src="/worker6.png"
+                src="/stickers/worker6.png"
                 alt="задумчивый работник в защитной каске"
                 width={500}
                 height={500}
@@ -102,7 +103,7 @@ export default function Home() {
               <Image
                 data-aos="fade-right"
                 data-aos-delay="400"
-                src="/worker5.png"
+                src="/stickers/worker5.png"
                 alt="радостный работник в защитной каске"
                 width={500}
                 height={500}
@@ -115,12 +116,12 @@ export default function Home() {
                 className="flex flex-col lg:gap-7 max-lg:gap-3 max-lg:w-full max-lg:p-4"
               >
                 <Link href="/testirovanie">
-                  <Button className="font-semibold bg-[var(--orange)] text-md xl:text-xl max-lg:text-sm max-sm:text-base hover:brightness-115 shadow-lg active:brightness-115 focus:brightness-115 w-full transition-transform hover:scale-[1.04]">
+                  <Button className="font-semibold bg-[var(--orange)] text-md xl:text-xl max-lg:text-sm max-sm:text-base hover:brightness-115 shadow-lg active:brightness-115 w-full transition-transform hover:scale-[1.04]">
                     Проверить уровень знаний
                   </Button>
                 </Link>
                 <Link href="/#form">
-                  <Button className="font-semibold bg-[var(--green)] text-md xl:text-xl max-lg:text-sm max-sm:text-base hover:brightness-115 shadow-lg active:brightness-115 focus:brightness-115 w-full transition-transform hover:scale-[1.04]">
+                  <Button className="font-semibold bg-[var(--green)] text-md xl:text-xl max-lg:text-sm max-sm:text-base hover:brightness-115 shadow-lg active:brightness-115 w-full transition-transform hover:scale-[1.04]">
                     Получить консультацию
                   </Button>
                 </Link>
@@ -132,8 +133,7 @@ export default function Home() {
               className="flex items-center gap-4 2xl:w-9/20 xl:w-2/5 lg:w-3/7 md:w-1/2 max-md:hidden"
             >
               <div className="text-gray-800 text-lg 2xl:text-2xl max-lg:text-sm italic border-l-4 p-4 border-[var(--orange)]">
-                Грамотная подготовка — залог успешной аттестации в
-                Ростехнадзоре!
+                Грамотная подготовка — залог успешной аттестации в Ростехнадзоре!
               </div>
             </div>
           </div>
@@ -154,15 +154,14 @@ export default function Home() {
               data-aos-delay="200"
               className="lg:text-xl text-lg text-center"
             >
-              Мы помогаем сдать аттестацию с первого раза — честно, эффективно и
-              по делу.
+              Мы помогаем сдать аттестацию с первого раза — честно, эффективно и по делу.
             </p>
           </div>
           <div className="grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1">
             {advantages.map((item, index) => (
               <Card
                 data-aos="zoom-in"
-                data-aos-delay={`${index * 100}`}
+                number={index}
                 key={index}
                 icon={item.icon}
                 title={item.title}
@@ -172,7 +171,7 @@ export default function Home() {
           </div>
           <div className="sm:flex sm:justify-center max-sm:mx-10 max-lg:my-3">
             <Link data-aos="zoom-in" data-aos-delay={`${100}`} href="#">
-              <Button className="font-semibold sm:px-20 bg-[var(--green)] text-xl max-md:text-lg hover:brightness-115 shadow-lg active:brightness-115 focus:brightness-115 w-full">
+              <Button className="font-semibold sm:px-20 bg-[var(--green)] text-xl max-md:text-lg hover:brightness-115 shadow-lg active:brightness-115 transition-transform hover:scale-[1.04] w-full">
                 Получить консультацию
               </Button>
             </Link>
@@ -181,17 +180,14 @@ export default function Home() {
       </section>
 
       <section className="flex justify-center bg-[var(--white)] text-[var(--black)]">
-        <div className="w-[85%] xl:w-6xl flex flex-col gap-8 items-center justify-center">
-          <h1 data-aos="fade-up" className="text-4xl font-bold text-center">
-            Как проходит обучение
+        <div className="w-[85%] xl:w-6xl flex flex-col gap-8 items-center justify-around">
+          <h1 data-aos="fade-up" className="text-5xl max-md:text-3xl font-bold text-center">
+            Как проходит обучение?
           </h1>
         </div>
       </section>
 
-      <section
-        id="services"
-        className="flex justify-center text-[var(--white)] py-10"
-      >
+      <section id="services" className="flex justify-center text-[var(--white)] py-10 max-md:py-4">
         <div className="w-[85%] xl:w-6xl flex flex-col justify-around">
           <div className="flex flex-col items-center gap-5">
             <h2
@@ -200,16 +196,12 @@ export default function Home() {
             >
               Программы подготовки к аттестации
             </h2>
-            <p
-              data-aos="fade-right"
-              className="lg:text-xl text-lg text-center text-[var(--white)]"
-            >
-              Выбирайте нужное направление и проходите подготовку с гарантией
-              качества.
+            <p data-aos="fade-right" className="lg:text-xl text-lg text-center text-[var(--white)]">
+              Выбирайте нужное направление и проходите подготовку с гарантией качества.
             </p>
           </div>
 
-          <div className="grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1">
+          <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1">
             {services.map((service, index) => (
               <ServiceCard
                 key={service.id}
@@ -222,33 +214,45 @@ export default function Home() {
         </div>
       </section>
 
-      <section
-        id="partners"
-        className="flex justify-center bg-[var(--white)] text-[var(--black)]"
-      >
-        <div className="w-[85%] xl:w-6xl flex flex-col gap-8 items-center justify-center">
-          <h1 data-aos="fade-up" className="text-4xl font-bold text-center">
-            Тут будут партнеры
+      <section id="partners" className="flex justify-center bg-[var(--white)] text-[var(--black)]">
+        <div className="w-[85%] xl:w-6xl flex flex-col gap-8 items-center justify-center overflow-hidden">
+          <h1 data-aos="fade-up" className="text-5xl font-bold text-center">
+            Наши партнеры
           </h1>
+          <div data-aos="fade-up" data-aos-delay="400" className="w-full">
+            <PartnersCarousel />
+          </div>
         </div>
       </section>
 
       <section id="reviews" className="flex justify-center">
         <div className="w-[85%] xl:w-6xl flex flex-col gap-8 items-center justify-center">
-          <h1 data-aos="fade-up" className="text-4xl font-bold text-center">
-            Тут будут отзывы в карточках
+          <h1 data-aos="fade-up" className="text-5xl font-bold text-center text-[var(--orange)]">
+            Отзывы
           </h1>
+          <div data-aos="fade-up" data-aos-delay="400" className="w-full">
+            <ReviewsCarousel />
+          </div>
         </div>
       </section>
 
-      <section
-        id="form"
-        className="flex justify-center bg-[var(--white)] text-[var(--black)]"
-      >
+      <section id="form" className="flex justify-center bg-[var(--white)] text-[var(--black)]">
         <div className="w-[85%] xl:w-6xl flex flex-col gap-8 items-center justify-center">
           <ConsultationForm />
         </div>
       </section>
+
+      <div className="flex justify-center py-10">
+        <div className="w-[85%] xl:w-6xl">
+          <h1
+            data-aos="fade-up"
+            className="lg:text-5xl md:text-4xl text-3xl font-bold text-center text-[var(--orange)]"
+          >
+            Популярные вопросы
+          </h1>
+          <FAQ />
+        </div>
+      </div>
     </>
   );
 }

@@ -1,6 +1,6 @@
-import Link from "next/link";
-import { ReactNode, MouseEventHandler } from "react";
-import styles from "./HeaderLink.module.css";
+import Link from 'next/link';
+import { ReactNode, MouseEventHandler } from 'react';
+import styles from './HeaderLink.module.css';
 
 interface HeaderLinkProps {
   href: string;

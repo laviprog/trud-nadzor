@@ -1,5 +1,5 @@
-@import "tailwindcss";
-@import "aos/dist/aos.css";
+@import 'tailwindcss';
+@import 'aos/dist/aos.css';
 
 :root {
   --black: #242424;
@@ -7,8 +7,9 @@
   --dark: #3a3a3a;
   --green: #6ed46e;
   --orange: #ff6b35;
-  --font-monserrat: "Monserrat", sans-serif;
-  --font-open-sans: "Open Sans", sans-serif;
+  --font-monserrat: 'Monserrat', sans-serif;
+  --font-open-sans: 'Open Sans', sans-serif;
+  --client-height: 100vh;
 }
 
 * {
@@ -22,11 +23,11 @@ html {
 body {
   background: var(--black);
   color: var(--white);
-  font-family: var(--font-monserrat);
+  font-family: var(--font-monserrat), sans-serif;
 }
 
 section {
-  min-height: calc(100vh - 72px);
+  min-height: calc(var(--client-height) - 72px);
 }
 
 section[id] {
@@ -34,12 +35,12 @@ section[id] {
 }
 
 .height-full {
-  min-height: calc(100vh - 72px);
+  min-height: calc(var(--client-height) - 72px);
 }
 
 @media (min-width: 768px) {
   section {
-    min-height: calc(100vh - 82px);
+    min-height: calc(var(--client-height) - 82px);
   }
 
   section[id] {
@@ -47,13 +48,13 @@ section[id] {
   }
 
   .height-full {
-    min-height: calc(100vh - 82px);
+    min-height: calc(var(--client-height) - 82px);
   }
 }
 
 @media (min-width: 1024px) {
   section {
-    min-height: calc(100vh - 92px);
+    min-height: calc(var(--client-height) - 92px);
   }
 
   section[id] {
@@ -61,13 +62,13 @@ section[id] {
   }
 
   .height-full {
-    min-height: calc(100vh - 92px);
+    min-height: calc(var(--client-height) - 92px);
   }
 }
 
 @media (min-width: 1280px) {
   section {
-    min-height: calc(100vh - 102px);
+    min-height: calc(var(--client-height) - 102px);
   }
 
   section[id] {
@@ -75,6 +76,6 @@ section[id] {
   }
 
   .height-full {
-    height: calc(100vh - 102px);
+    height: calc(var(--client-height) - 102px);
   }
 }

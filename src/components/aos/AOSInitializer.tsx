@@ -6,11 +6,14 @@ import 'aos/dist/aos.css';
 
 export default function AOSInitializer() {
   useEffect(() => {
+    const isMobile = window.innerWidth <= 768;
+    const offset = isMobile ? 10 : 30;
+
     AOS.init({
       duration: 800,
       easing: 'ease-out-cubic',
       once: false,
-      offset: 100,
+      offset: offset,
     });
   }, []);
 

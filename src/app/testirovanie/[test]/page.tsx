@@ -1,14 +1,10 @@
-import Quiz from "@/components/quiz/Quiz";
-import { testData } from "@/data/tests";
-import { notFound } from "next/navigation";
+import Quiz from '@/components/quiz/Quiz';
+import { testData } from '@/data/tests';
+import { notFound } from 'next/navigation';
 
 type TestType = keyof typeof testData;
 
-export default async function TestPage({
-  params,
-}: {
-  params: Promise<{ test: string }>;
-}) {
+export default async function TestPage({ params }: { params: Promise<{ test: string }> }) {
   const { test } = await params;
   const testKey = test as TestType;
   const data = testData[testKey];
@@ -17,15 +13,13 @@ export default async function TestPage({
     notFound();
   }
 
-  return (
-    <Quiz questions={data.questions} testTitle={data.title} />
-  );
+  return <Quiz questions={data.questions} testTitle={data.title} />;
 }
 
 export async function generateStaticParams() {
   return [
-    { test: "teploenergetika" },
-    { test: "elektroenergetika" },
-    { test: "promyshlennaya-bezopasnost" },
+    { test: 'teploenergetika' },
+    { test: 'elektroenergetika' },
+    { test: 'promyshlennaya-bezopasnost' },
   ];
 }

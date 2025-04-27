@@ -7,9 +7,10 @@ export default function Button({
 }: Readonly<{
   children: React.ReactNode;
   className?: string;
-}> & ComponentPropsWithoutRef<'button'>) {
+}> &
+  ComponentPropsWithoutRef<'button'>) {
   return (
-    <button 
+    <button
       className={`text-[var(--black)] py-3 px-5 max-sm:px-3 rounded-xl cursor-pointer ${className}`}
       {...props}
     >

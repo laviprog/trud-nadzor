@@ -1,9 +1,9 @@
-import Image from "next/image";
-import SocialLinks from "./SocialLinks";
+import Image from 'next/image';
+import SocialLinks from './SocialLinks';
 
 export default function FooterBranding() {
   return (
-    <div className="lg:col-span-2 max-lg:pl-7">
+    <div className="lg:col-span-2">
       <Image
         src="/logo.png"
         alt="Труд надзор логотип"
@@ -12,7 +12,7 @@ export default function FooterBranding() {
         className="w-55 mx-auto lg:mx-0"
         priority
       />
-      <p className="text-lg text-center max-lg:pr-5 lg:text-left mx-auto lg:mx-0 ">
+      <p className="text-lg text-center max-lg:pr-5 lg:text-left mx-auto lg:mx-0">
         <i>Трудимся и надзираем</i>
       </p>
       <SocialLinks />
