@@ -1,6 +1,8 @@
 'use client';
 
+import React from 'react';
 import { useState } from 'react';
+import PhoneInput from 'react-phone-number-input/input';
 
 export default function ConsultationForm() {
   const [form, setForm] = useState({
@@ -65,40 +67,42 @@ export default function ConsultationForm() {
       >
         <input
           name="name"
-          placeholder="Ваше имя"
+          placeholder="Ваше имя*"
           value={form.name}
           onChange={handleChange}
           required
-          className="border border-gray-300 rounded-xl p-3 focus:outline-none focus:ring-2 focus:ring-[var(--green)]"
+          className="border border-gray-300 rounded-xl p-3 focus:outline-none focus:border-white focus:ring-2 focus:ring-[var(--green)]"
         />
         <input
           name="email"
-          placeholder="Email"
+          placeholder="Email*"
           type="email"
           value={form.email}
           onChange={handleChange}
           required
-          className="border border-gray-300 rounded-xl p-3 focus:outline-none focus:ring-2 focus:ring-[var(--green)]"
+          className="border border-gray-300 rounded-xl p-3 focus:outline-none focus:border-white focus:ring-2 focus:ring-[var(--green)]"
         />
-        <input
-          name="phone"
-          placeholder="Телефон"
-          type="tel"
+        <PhoneInput
+          placeholder="Телефон*"
           value={form.phone}
-          onChange={handleChange}
-          required
-          className="border border-gray-300 rounded-xl p-3 focus:outline-none focus:ring-2 focus:ring-[var(--green)]"
+          onChange={(value) => {
+            setForm((prevForm) => ({
+              ...prevForm,
+              phone: value || '',
+            }));
+          }}
+          className="border border-gray-300 rounded-xl p-3 focus:outline-none focus:border-white focus:ring-2 focus:ring-[var(--green)]"
         />
         <textarea
           name="message"
-          placeholder="Комментарий (необязательно)"
+          placeholder="Комментарий"
           value={form.message}
           onChange={handleChange}
-          className="border border-gray-300 rounded-xl p-3 min-h-[100px] focus:outline-none focus:ring-2 focus:ring-[var(--green)]"
+          className="border border-gray-300 rounded-xl p-3 min-h-[100px] focus:border-white focus:outline-none focus:ring-2 focus:ring-[var(--green)]"
         />
         <button
           type="submit"
-          className="cursor-pointer bg-[var(--green)] py-3 rounded-xl font-semibold xl:text-xl text-lg max-sm:text-sm hover:brightness-115 shadow-lg active:brightness-115 focus:brightness-115 w-full transition-transform hover:scale-[1.04]"
+          className="cursor-pointer bg-[var(--green)] py-3 rounded-xl font-semibold xl:text-xl text-lg max-sm:text-sm hover:brightness-115 shadow-lg active:brightness-115 w-full transition-transform hover:scale-[1.04]"
         >
           Записаться на консультацию
         </button>
