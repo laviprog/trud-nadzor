@@ -1,6 +1,7 @@
-import Quiz from '@/components/quiz/Quiz';
+// import Quiz from '@/components/quiz/Quiz';
 import { testData } from '@/data/tests';
 import { notFound } from 'next/navigation';
+import Quiz from '@/components/quiz/Quiz';
 
 type TestType = keyof typeof testData;
 

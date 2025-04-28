@@ -16,7 +16,7 @@ export default function ButtonSwipe({
 
   return (
     <button
-      className={`rounded-[50%] cursor-pointer m-3 p-3 ${className}`}
+      className={`rounded-[50%] cursor-pointer m-3 p-3 hover:brightness-110 active:brightness-110 transition-transform hover:scale-[1.07] ${className}`}
       onClick={() => (isNext ? swiper.slideNext() : swiper.slidePrev())}
     >
       {children}

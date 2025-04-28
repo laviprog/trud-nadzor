@@ -93,7 +93,7 @@ export default function Home() {
                 alt="задумчивый работник в защитной каске"
                 width={500}
                 height={500}
-                className="xl:w-60 lg:w-55 max-lg:w-45 max-sm:hidden 2xl:w-65"
+                className="xl:w-60 lg:w-55 max-lg:w-45 max-sm:hidden 2xl:w-65 pointer-events-none select-none"
                 priority
               />
             </div>
@@ -107,7 +107,7 @@ export default function Home() {
                 alt="радостный работник в защитной каске"
                 width={500}
                 height={500}
-                className="xl:w-60 lg:w-55 max-lg:hidden 2xl:w-65"
+                className="xl:w-60 lg:w-55 max-lg:hidden 2xl:w-65 pointer-events-none select-none"
                 priority
               />
               <div

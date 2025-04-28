@@ -21,7 +21,7 @@ export default function Header() {
             alt="Эрудит пати лого"
             width={500}
             height={500}
-            className="w-30 md:w-35 lg:w-40 xl:w-45"
+            className="w-30 md:w-35 lg:w-40 xl:w-45 pointer-events-none select-none"
             priority
           />
         </Link>
