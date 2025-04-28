@@ -5,6 +5,7 @@ import TestResultForm from '@/components/form/TestResultForm';
 import { Question } from '@/types/types';
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
+import { HiArrowNarrowLeft, HiArrowNarrowRight } from 'react-icons/hi';
 
 export default function Quiz({
   questions,
@@ -181,25 +182,30 @@ export default function Quiz({
                   >
                     {currentQuestionIndex > 0 && (
                       <button
-                        className="cursor-pointer py-3 px-6 max-md:py-1 bg-[var(--orange)] rounded-xl transition hover:scale-[1.04] hover:brightness-110"
+                        className="cursor-pointer py-3 px-6 max-md:py-2 bg-[var(--orange)] rounded-xl transition hover:scale-[1.04] hover:brightness-110"
                         onClick={() => setCurrentQuestionIndex(currentQuestionIndex - 1)}
                       >
-                        <span className="block md:hidden text-2xl font-bold">←</span>
+                        <span className="block md:hidden text-2xl font-bold">
+                          <HiArrowNarrowLeft />
+                        </span>
                         <span className="hidden md:block">Предыдущий вопрос</span>
                       </button>
                     )}
                     {currentQuestionIndex < questions.length - 1 && (
                       <button
-                        className="cursor-pointer py-3 px-6 max-md:py-1 bg-[var(--green)] rounded-xl transition hover:scale-[1.04] hover:brightness-110"
+                        className="cursor-pointer py-3 px-6 max-md:py-2 bg-[var(--green)] rounded-xl transition hover:scale-[1.04] hover:brightness-110"
                         onClick={() => setCurrentQuestionIndex(currentQuestionIndex + 1)}
                       >
                         <span className="hidden md:block">Следующий вопрос</span>
-                        <span className="block md:hidden text-2xl font-bold">→</span>
+                        <span className="block md:hidden text-2xl font-bold">
+                          <HiArrowNarrowRight />
+                        </span>
                       </button>
                     )}
+
                     {currentQuestionIndex == questions.length - 1 && (
                       <button
-                        className="cursor-pointer py-3 px-6 max-md:py-1 bg-[var(--green)] rounded-xl transition hover:scale-[1.04] hover:brightness-110"
+                        className="cursor-pointer py-3 px-6 max-md:py-2 bg-[var(--green)] rounded-xl transition hover:scale-[1.04] hover:brightness-110"
                         onClick={() => setIsFinished(true)}
                       >
                         Завершить тест
