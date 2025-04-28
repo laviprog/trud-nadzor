@@ -1,8 +1,10 @@
 'use client';
 
-import { useTest } from '@/hooks/test';
-import { Question } from '@/types/types';
 import { AnimatePresence, motion } from 'framer-motion';
+import TestResultForm from '@/components/form/TestResultForm';
+import { Question } from '@/types/types';
+import { useEffect, useState } from 'react';
+import { useRouter } from 'next/navigation';
 
 export default function Quiz({
   questions,
@@ -11,21 +13,79 @@ export default function Quiz({
   questions: Question[];
   testTitle: string;
 }) {
-  const {
-    currentQuestion,
-    selectAnswer,
-    goToNextQuestion,
-    currentQuestionIndex,
-    isFinished,
-    resetTest,
-  } = useTest(questions, testTitle);
+  const [isInitialized, setIsInitialized] = useState(false);
+  const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
+  const [currentQuestion, setCurrentQuestion] = useState(questions[currentQuestionIndex]);
+  const [isFinished, setIsFinished] = useState(false);
+  const [answers, setAnswers] = useState(Array(questions.length).fill(-1));
+  const router = useRouter();
+
+  useEffect(() => {
+    setCurrentQuestion(questions[currentQuestionIndex]);
+  }, [currentQuestionIndex, questions]);
+
+  useEffect(() => {
+    if (!isInitialized) return;
+
+    localStorage.setItem(
+      testTitle,
+      JSON.stringify({
+        answers,
+        currentQuestionIndex,
+        isFinished,
+      })
+    );
+  }, [answers, testTitle, currentQuestionIndex, isFinished, isInitialized]);
+
+  useEffect(() => {
+    const savedState = localStorage.getItem(testTitle);
+    if (savedState) {
+      const parsedState = JSON.parse(savedState);
+      if (
+        parsedState.answers &&
+        parsedState.currentQuestionIndex !== undefined &&
+        parsedState.isFinished !== undefined
+      ) {
+        setAnswers(parsedState.answers);
+        setCurrentQuestionIndex(parsedState.currentQuestionIndex);
+        setIsFinished(parsedState.isFinished);
+      }
+    }
+    setIsInitialized(true);
+  }, [testTitle]);
+
+  const testReset = () => {
+    setAnswers(Array(questions.length).fill(-1));
+    setCurrentQuestionIndex(0);
+    setIsFinished(false);
+    localStorage.removeItem(testTitle);
+    localStorage.removeItem(`${testTitle}-success`);
+  };
+
+  const getTotalCorrectAnswers = () => {
+    let totalCorrectAnswers: number = 0;
+    answers.forEach((answer: number, index: number) => {
+      if (answer === questions[index].correct - 1) {
+        totalCorrectAnswers += 1;
+      }
+    });
+    return totalCorrectAnswers;
+  };
+
+  const handleAnswer = (questionIndex: number, answerIndex: number): void => {
+    setAnswers((prevAnswers) => {
+      const newAnswers = [...prevAnswers];
+      newAnswers[questionIndex] = answerIndex;
+      return newAnswers;
+    });
+  };
 
   const progress = Math.round(
     ((currentQuestionIndex + (isFinished ? 1 : 0)) / questions.length) * 100
   );
 
   return (
-    <section className="flex justify-center bg-[var(--white)] text-[var(--black)] min-h-screen py-10">
+    <section className="flex justify-center bg-[var(--white)] text-[var(--black)] min-h-screen md:py-10 py-3">
       <div className="w-[85%] xl:w-6xl flex flex-col gap-8 items-center justify-center">
         <h1 className="text-3xl font-bold text-center">{testTitle}</h1>
 
@@ -36,60 +96,120 @@ export default function Quiz({
               style={{ width: `${progress}%` }}
             />
           </div>
-
-          <AnimatePresence mode="wait">
-            {isFinished ? (
-              <motion.div
-                key="finished"
-                initial={{ opacity: 0, scale: 0.95 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.95 }}
-                transition={{ duration: 0.4, ease: 'easeInOut' }}
-                className="text-center space-y-6 mt-5"
-              >
-                <h2 className="text-2xl font-semibold">🎉 Тест завершён!</h2>
-                <p className="text-gray-600">Вы ответили на все вопросы.</p>
-                <button
-                  className="bg-[var(--orange)] cursor-pointer py-3 px-5 rounded-xl text-md xl:text-xl max-lg:text-sm max-sm:text-base hover:brightness-115 active:brightness-115 focus:brightness-115 transition-transform hover:scale-[1.04]"
-                  onClick={resetTest}
+          <motion.div
+            layout
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.4, ease: 'easeInOut' }}
+            className="relative w-full min-h-[450px] transition-all"
+          >
+            <AnimatePresence mode="wait">
+              {isFinished ? (
+                <motion.div
+                  key="finished"
+                  layout
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0.95 }}
+                  transition={{ duration: 0.4, ease: 'easeInOut' }}
+                  className="text-center space-y-6 mt-5"
                 >
-                  Пройти заново
-                </button>
-              </motion.div>
-            ) : (
-              <motion.div
-                key={currentQuestionIndex}
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.9 }}
-                transition={{ duration: 0.4, ease: 'easeInOut' }}
-                className="w-full space-y-6"
-              >
-                <div className="text-lg font-medium">
-                  <span className="text-gray-500">
-                    Вопрос {currentQuestionIndex + 1} из {questions.length}:
-                  </span>
-                  <h3 className="mt-2 text-xl font-semibold">{currentQuestion.text}</h3>
-                </div>
-
-                <ul className="flex flex-col gap-4">
-                  {currentQuestion.options.map((option, index) => (
-                    <li key={index}>
+                  <h2 className="text-2xl font-semibold">🎉 Тест завершён!</h2>
+                  <div className="w-full flex justify-center items-center h-[350px]">
+                    <TestResultForm
+                      correct={getTotalCorrectAnswers()}
+                      total={questions.length}
+                      testTitle={testTitle}
+                    />
+                  </div>
+                  <div className="flex justify-center">
+                    <div className="flex justify-center gap-5 max-md:flex-col max-md:w-100">
                       <button
-                        className="w-full cursor-pointer text-left px-6 py-3 border shadow-md border-gray-300 rounded-lg hover:bg-blue-100 hover:border-blue-400 transition"
-                        onClick={() => {
-                          selectAnswer(index);
-                          goToNextQuestion();
-                        }}
+                        onClick={() => router.push('/testirovanie')}
+                        className="cursor-pointer py-3 px-6 bg-[var(--orange)] rounded-xl transition hover:scale-[1.04] hover:brightness-110"
                       >
-                        {option}
+                        Вернуться к тестам
                       </button>
-                    </li>
-                  ))}
-                </ul>
-              </motion.div>
-            )}
-          </AnimatePresence>
+                      <button
+                        onClick={() => testReset()}
+                        className="cursor-pointer py-3 px-6 bg-[var(--green)] rounded-xl transition hover:scale-[1.04] hover:brightness-110"
+                      >
+                        Пройти тест еще раз
+                      </button>
+                    </div>
+                  </div>
+                </motion.div>
+              ) : (
+                <motion.div
+                  key={currentQuestionIndex}
+                  layout
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0.9 }}
+                  transition={{ duration: 0.4, ease: 'easeInOut' }}
+                  className="w-full space-y-6"
+                >
+                  <div className="md:text-lg font-medium">
+                    <span className="text-gray-500">
+                      Вопрос {currentQuestionIndex + 1} из {questions.length}:
+                    </span>
+                    <p className="mt-2 lg:text-xl text-lg font-semibold leading-snug select-none">
+                      {currentQuestion.text}
+                    </p>
+                  </div>
+
+                  <ul className="flex flex-col gap-4">
+                    {currentQuestion.options.map((option, index) => (
+                      <li key={index}>
+                        <button
+                          className={`select-none leading-snug w-full cursor-pointer px-6 py-3 text-left shadow-md border rounded-xl transition hover:scale-[1.01]
+                          ${
+                            answers[currentQuestionIndex] === index
+                              ? 'border-blue-600 bg-blue-100'
+                              : 'border-gray-300 bg-white hover:border-blue-300 hover:bg-blue-100'
+                          }`}
+                          onClick={() => handleAnswer(currentQuestionIndex, index)}
+                        >
+                          {option}
+                        </button>
+                      </li>
+                    ))}
+                  </ul>
+                  <div
+                    className={`flex w-full ${currentQuestionIndex > 0 ? 'justify-between' : 'justify-end'}`}
+                  >
+                    {currentQuestionIndex > 0 && (
+                      <button
+                        className="cursor-pointer py-3 px-6 max-md:py-1 bg-[var(--orange)] rounded-xl transition hover:scale-[1.04] hover:brightness-110"
+                        onClick={() => setCurrentQuestionIndex(currentQuestionIndex - 1)}
+                      >
+                        <span className="block md:hidden text-2xl font-bold">←</span>
+                        <span className="hidden md:block">Предыдущий вопрос</span>
+                      </button>
+                    )}
+                    {currentQuestionIndex < questions.length - 1 && (
+                      <button
+                        className="cursor-pointer py-3 px-6 max-md:py-1 bg-[var(--green)] rounded-xl transition hover:scale-[1.04] hover:brightness-110"
+                        onClick={() => setCurrentQuestionIndex(currentQuestionIndex + 1)}
+                      >
+                        <span className="hidden md:block">Следующий вопрос</span>
+                        <span className="block md:hidden text-2xl font-bold">→</span>
+                      </button>
+                    )}
+                    {currentQuestionIndex == questions.length - 1 && (
+                      <button
+                        className="cursor-pointer py-3 px-6 max-md:py-1 bg-[var(--green)] rounded-xl transition hover:scale-[1.04] hover:brightness-110"
+                        onClick={() => setIsFinished(true)}
+                      >
+                        Завершить тест
+                      </button>
+                    )}
+                  </div>
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </motion.div>
         </div>
       </div>
     </section>
