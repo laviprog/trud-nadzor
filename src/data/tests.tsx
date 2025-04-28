@@ -1,4 +1,4 @@
-import { Question, TestInfo } from '@/types/types';
+import { TestInfo } from '@/types/types';
 import { FaBolt, FaFire, FaHardHat } from 'react-icons/fa';
 
 export const tests: TestInfo[] = [
