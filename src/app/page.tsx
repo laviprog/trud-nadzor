@@ -9,6 +9,7 @@ import { services } from '@/data/services';
 import { PartnersCarousel } from '@/components/carousel/PartnersCarousel';
 import { ReviewsCarousel } from '@/components/carousel/ReviewsCarousel';
 import FAQ from '@/components/faq/FAQ';
+import TrainingSection from '@/components/TrainingSection';
 
 export default function Home() {
   return (
@@ -179,43 +180,18 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="flex justify-center bg-[var(--white)] text-[var(--black)]">
-        <div className="w-[85%] xl:w-6xl flex flex-col gap-8 items-center justify-around">
-          <h1 data-aos="fade-up" className="text-5xl max-md:text-3xl font-bold text-center">
-            Как проходит обучение?
+      <section className="flex justify-center">
+        <div className="w-[85%] xl:w-6xl flex flex-col gap-15 items-center justify-around lg:py-15 py-10">
+          <h1
+            data-aos="zoom-in"
+            className="xl:text-4xl text-3xl font-bold text-center text-[var(--orange)] mb-5"
+          >
+            Ваш путь к успешной аттестации
           </h1>
-          {/*<div className="flex justify-center w-full">*/}
-          {/*  <div className="flex flex-col w-[75%] gap-5 relative">*/}
-          {/*    <div className="w-full flex justify-start m-4">*/}
-          {/*      <div className="border-4 border-[var(--orange)] rounded-xl shadow-xl bg-white h-40 w-70">*/}
-          {/*        <p className="p-4">Вот так проходит обучение</p>*/}
-          {/*      </div>*/}
-          {/*    </div>*/}
-          {/*    <div className="w-full flex justify-end m-4">*/}
-          {/*      <div className="border-4 border-[var(--orange)] rounded-xl shadow-xl bg-white h-40 w-70">*/}
-          {/*        <p className="p-4">Вот так проходит обучение</p>*/}
-          {/*      </div>*/}
-          {/*    </div>*/}
-          {/*    <div className="w-full flex justify-start m-4">*/}
-          {/*      <div className="border-4 border-[var(--orange)] rounded-xl shadow-xl bg-white h-40 w-70">*/}
-          {/*        <p className="p-4">Вот так проходит обучение</p>*/}
-          {/*      </div>*/}
-          {/*    </div>*/}
-          {/*    <div className="w-full flex justify-end m-4">*/}
-          {/*      <div className="border-4 border-[var(--orange)] rounded-xl shadow-xl bg-white h-40 w-70">*/}
-          {/*        <p className="p-4">Вот так проходит обучение</p>*/}
-          {/*      </div>*/}
-          {/*    </div>*/}
-          {/*<Image*/}
-          {/*  src="/arrow2.png"*/}
-          {/*  alt="arrow"*/}
-          {/*  width={500}*/}
-          {/*  height={500}*/}
-          {/*  className="absolute z-10 w-60 top-20 left-100"*/}
-          {/*  priority*/}
-          {/*/>*/}
-          {/*</div>*/}
-          {/*</div>*/}
+
+          <div className="w-[85%] flex justify-center">
+            <TrainingSection />
+          </div>
         </div>
       </section>
 
@@ -223,12 +199,16 @@ export default function Home() {
         <div className="w-[85%] xl:w-6xl flex flex-col justify-around">
           <div className="flex flex-col items-center gap-5">
             <h2
-              data-aos="fade-right"
+              data-aos="zoom-in"
               className="text-3xl xl:text-4xl text-center font-bold text-[var(--orange)]"
             >
               Программы подготовки к аттестации
             </h2>
-            <p data-aos="fade-right" className="lg:text-xl text-lg text-center text-[var(--white)]">
+            <p
+              data-aos="zoom-in"
+              data-aos-delay={200}
+              className="lg:text-xl text-lg text-center text-[var(--white)]"
+            >
               Выбирайте нужное направление и проходите подготовку с гарантией качества.
             </p>
           </div>
@@ -277,7 +257,7 @@ export default function Home() {
       <div className="flex justify-center py-10">
         <div className="w-[85%] xl:w-6xl">
           <h1
-            data-aos="fade-up"
+            data-aos="fade-right"
             className="lg:text-5xl md:text-4xl text-3xl font-bold text-center text-[var(--orange)]"
           >
             Популярные вопросы
