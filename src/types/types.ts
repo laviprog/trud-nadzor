@@ -28,3 +28,8 @@ export type Question = {
   options: string[];
   correct: number;
 };
+
+export type FAQData = {
+  question: string;
+  answer: string;
+};

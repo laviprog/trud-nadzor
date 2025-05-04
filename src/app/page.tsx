@@ -10,6 +10,7 @@ import { PartnersCarousel } from '@/components/carousel/PartnersCarousel';
 import { ReviewsCarousel } from '@/components/carousel/ReviewsCarousel';
 import FAQ from '@/components/faq/FAQ';
 import TrainingSection from '@/components/TrainingSection';
+import { faqDataMain } from '@/data/FAQ';
 
 export default function Home() {
   return (
@@ -262,7 +263,7 @@ export default function Home() {
           >
             Популярные вопросы
           </h1>
-          <FAQ />
+          <FAQ data={faqDataMain} />
         </div>
       </div>
     </>
