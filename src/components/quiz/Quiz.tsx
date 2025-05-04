@@ -10,9 +10,11 @@ import { HiArrowNarrowLeft, HiArrowNarrowRight } from 'react-icons/hi';
 export default function Quiz({
   questions,
   testTitle,
+  testPath,
 }: {
   questions: Question[];
   testTitle: string;
+  testPath: string;
 }) {
   const [isInitialized, setIsInitialized] = useState(false);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
@@ -122,6 +124,7 @@ export default function Quiz({
                       correct={getTotalCorrectAnswers()}
                       total={questions.length}
                       testTitle={testTitle}
+                      testPath={testPath}
                     />
                   </div>
                   <div className="flex justify-center">
