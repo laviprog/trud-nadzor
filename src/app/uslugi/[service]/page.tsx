@@ -3,6 +3,7 @@ import { notFound } from 'next/navigation';
 import FAQ from '@/components/faq/FAQ';
 import { faqDataServices } from '@/data/FAQ';
 import ConsultationForm from '@/components/form/ConsultationForm';
+import Image from 'next/image';
 
 type TestType = keyof typeof ServiceData;
 
@@ -16,19 +17,20 @@ export default async function TestPage({ params }: { params: Promise<{ service: 
   }
 
   return (
-    <section className="flex justify-center bg-[var(--white)] text-[var(--black)]">
-      <div className="w-[85%] xl:w-6xl flex flex-col gap-8 items-center justify-center">
-        <h1 data-aos="fade-up" className="text-4xl font-bold text-center">
-          Тут будет подробная информация о {data.title}
-        </h1>
-      </div>
-    </section>
     <>
       <section className="flex justify-center bg-[var(--white)] text-[var(--black)]">
         <div className="w-[85%] xl:w-6xl flex flex-col gap-8 items-center justify-center">
           <h1 data-aos="fade-up" className="text-4xl font-bold text-center">
             Тут будет подробная информация о {data.title}
           </h1>
+          <Image
+            src={data.imageUrl}
+            width={1000}
+            height={1000}
+            alt={`${data.title} изображение`}
+            className="pointer-events-none select-none"
+            priority
+          />
         </div>
       </section>
 

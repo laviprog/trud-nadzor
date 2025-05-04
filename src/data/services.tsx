@@ -4,12 +4,15 @@ import { Service } from '@/types/types';
 export const ServiceData = {
   teploenergetika: {
     title: 'Теплоэнергетика',
+    imageUrl: '/services/tepl.png',
   },
   elektroenergetika: {
     title: 'Электроэнергетика',
+    imageUrl: '/services/el.png',
   },
   'promyshlennaya-bezopasnost': {
     title: 'Промышленная безопасность',
+    imageUrl: '/services/prom.png',
   },
 };
 

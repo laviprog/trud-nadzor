@@ -33,3 +33,8 @@ export type FAQData = {
   question: string;
   answer: string;
 };
+
+export type ServiceDataType = {
+  title: string;
+  mainImageUrl: string;
+};
