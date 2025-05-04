@@ -1,5 +1,3 @@
-'use client';
-
 import FAQItem from './FAQItem';
 import { FAQData } from '@/types/types';
 
