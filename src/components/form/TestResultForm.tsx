@@ -7,10 +7,12 @@ export default function TestResultForm({
   correct,
   total,
   testTitle,
+  testPath,
 }: {
   correct: number;
   total: number;
   testTitle: string;
+  testPath: string;
 }) {
   const [form, setForm] = useState({
     name: '',
@@ -47,6 +49,7 @@ export default function TestResultForm({
           correct,
           total,
           testTitle,
+          testPath,
         }),
         headers: { 'Content-Type': 'application/json' },
       });

@@ -13,7 +13,7 @@ export default async function TestPage({ params }: { params: Promise<{ test: str
     notFound();
   }
 
-  return <Quiz questions={data.questions} testTitle={data.title} />;
+  return <Quiz questions={data.questions} testTitle={data.title} testPath={testKey} />;
 }
 
 export async function generateStaticParams() {

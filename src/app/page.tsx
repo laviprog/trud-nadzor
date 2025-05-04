@@ -184,6 +184,38 @@ export default function Home() {
           <h1 data-aos="fade-up" className="text-5xl max-md:text-3xl font-bold text-center">
             Как проходит обучение?
           </h1>
+          {/*<div className="flex justify-center w-full">*/}
+          {/*  <div className="flex flex-col w-[75%] gap-5 relative">*/}
+          {/*    <div className="w-full flex justify-start m-4">*/}
+          {/*      <div className="border-4 border-[var(--orange)] rounded-xl shadow-xl bg-white h-40 w-70">*/}
+          {/*        <p className="p-4">Вот так проходит обучение</p>*/}
+          {/*      </div>*/}
+          {/*    </div>*/}
+          {/*    <div className="w-full flex justify-end m-4">*/}
+          {/*      <div className="border-4 border-[var(--orange)] rounded-xl shadow-xl bg-white h-40 w-70">*/}
+          {/*        <p className="p-4">Вот так проходит обучение</p>*/}
+          {/*      </div>*/}
+          {/*    </div>*/}
+          {/*    <div className="w-full flex justify-start m-4">*/}
+          {/*      <div className="border-4 border-[var(--orange)] rounded-xl shadow-xl bg-white h-40 w-70">*/}
+          {/*        <p className="p-4">Вот так проходит обучение</p>*/}
+          {/*      </div>*/}
+          {/*    </div>*/}
+          {/*    <div className="w-full flex justify-end m-4">*/}
+          {/*      <div className="border-4 border-[var(--orange)] rounded-xl shadow-xl bg-white h-40 w-70">*/}
+          {/*        <p className="p-4">Вот так проходит обучение</p>*/}
+          {/*      </div>*/}
+          {/*    </div>*/}
+          {/*<Image*/}
+          {/*  src="/arrow2.png"*/}
+          {/*  alt="arrow"*/}
+          {/*  width={500}*/}
+          {/*  height={500}*/}
+          {/*  className="absolute z-10 w-60 top-20 left-100"*/}
+          {/*  priority*/}
+          {/*/>*/}
+          {/*</div>*/}
+          {/*</div>*/}
         </div>
       </section>
 
