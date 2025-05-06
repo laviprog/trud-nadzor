@@ -3,6 +3,7 @@
 import React from 'react';
 import { useState } from 'react';
 import PhoneInput from 'react-phone-number-input/input';
+import Button from '@/components/button/Button';
 
 export default function ConsultationForm() {
   const [form, setForm] = useState({
@@ -100,12 +101,12 @@ export default function ConsultationForm() {
           onChange={handleChange}
           className="border border-gray-300 rounded-xl p-3 min-h-[100px] focus:border-white focus:outline-none focus:ring-2 focus:ring-[var(--green)]"
         />
-        <button
-          type="submit"
-          className="cursor-pointer bg-[var(--green)] py-3 rounded-xl font-semibold xl:text-xl text-lg max-sm:text-sm hover:brightness-115 shadow-lg active:brightness-115 w-full transition-transform hover:scale-[1.04]"
-        >
-          Записаться на консультацию
-        </button>
+        <Button type="submit" className="green py-3 shadow-lg w-full">
+          <span className="font-semibold xl:text-xl text-lg max-sm:hidden">
+            Записаться на консультацию
+          </span>
+          <span className="font-semibold text-lg sm:hidden">Отправить</span>
+        </Button>
       </form>
     </>
   );

@@ -2,81 +2,117 @@
 @import 'aos/dist/aos.css';
 
 :root {
-  --black: #242424;
-  --white: #eeeeee;
-  --dark: #3a3a3a;
-  --green: #6ed46e;
-  --orange: #ff6b35;
-  --orange-light: #ffd5c2;
-  --font-monserrat: 'Monserrat', sans-serif;
-  --font-open-sans: 'Open Sans', sans-serif;
-  --client-height: 100vh;
+	--black: #242424;
+	--white: #eeeeee;
+	--dark: #3a3a3a;
+	--green: #6ed46e;
+	--orange: #ff6b35;
+	--orange-light: #ffd5c2;
+	--font-monserrat: 'Monserrat', sans-serif;
+	--font-open-sans: 'Open Sans', sans-serif;
+	--client-height: 100vh;
 }
 
 * {
-  transition: all 0.5s ease;
+	transition: all 0.5s ease;
 }
 
 html {
-  scroll-behavior: smooth;
+	scroll-behavior: smooth;
 }
 
 body {
-  background: var(--black);
-  color: var(--white);
-  font-family: var(--font-monserrat), sans-serif;
+	background: var(--black);
+	color: var(--white);
+	font-family: var(--font-monserrat), sans-serif;
 }
 
 section {
-  min-height: calc(var(--client-height) - 72px);
+	min-height: calc(var(--client-height) - 72px);
 }
 
 section[id] {
-  scroll-margin-top: 72px;
+	scroll-margin-top: 72px;
+}
+
+.orange {
+	background-color: var(--orange);
+}
+
+.green {
+	background-color: var(--green);
+}
+
+.black {
+	background-color: var(--white);
+}
+
+.dark {
+	background-color: var(--dark);
+}
+
+.white {
+	background-color: var(--white);
+}
+
+.t-white {
+	color: var(--white);
+}
+
+.t-dark {
+	color: var(--dark);
+}
+
+.t-black {
+	color: var(--black);
+}
+
+.t-orange {
+	color: var(--orange);
 }
 
 .height-full {
-  min-height: calc(var(--client-height) - 72px);
+	min-height: calc(var(--client-height) - 72px);
 }
 
 @media (min-width: 768px) {
-  section {
-    min-height: calc(var(--client-height) - 82px);
-  }
+	section {
+		min-height: calc(var(--client-height) - 82px);
+	}
 
-  section[id] {
-    scroll-margin-top: 82px;
-  }
+	section[id] {
+		scroll-margin-top: 82px;
+	}
 
-  .height-full {
-    min-height: calc(var(--client-height) - 82px);
-  }
+	.height-full {
+		min-height: calc(var(--client-height) - 82px);
+	}
 }
 
 @media (min-width: 1024px) {
-  section {
-    min-height: calc(var(--client-height) - 92px);
-  }
+	section {
+		min-height: calc(var(--client-height) - 92px);
+	}
 
-  section[id] {
-    scroll-margin-top: 92px;
-  }
+	section[id] {
+		scroll-margin-top: 92px;
+	}
 
-  .height-full {
-    min-height: calc(var(--client-height) - 92px);
-  }
+	.height-full {
+		min-height: calc(var(--client-height) - 92px);
+	}
 }
 
 @media (min-width: 1280px) {
-  section {
-    min-height: calc(var(--client-height) - 102px);
-  }
+	section {
+		min-height: calc(var(--client-height) - 102px);
+	}
 
-  section[id] {
-    scroll-margin-top: 102px;
-  }
+	section[id] {
+		scroll-margin-top: 102px;
+	}
 
-  .height-full {
-    height: calc(var(--client-height) - 102px);
-  }
+	.height-full {
+		height: calc(var(--client-height) - 102px);
+	}
 }
