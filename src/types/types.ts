@@ -18,8 +18,7 @@ export type TestInfo = {
   title: string;
   icon: React.ReactNode;
   href: string;
-  questions: string;
-  duration: string;
+  options: string[];
 };
 
 export type Question = {

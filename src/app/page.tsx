@@ -151,14 +151,14 @@ export default function Home() {
           <div className="flex flex-col items-center gap-5">
             <h1
               data-aos="fade-right"
-              className="xl:text-4xl text-3xl font-bold t-orange text-center"
+              className="xl:text-4xl sm:text-3xl text-2xl font-bold t-orange text-center"
             >
               Почему нам доверяют подготовку к аттестации?
             </h1>
             <p
               data-aos="fade-right"
               data-aos-delay="200"
-              className="lg:text-xl text-lg text-center"
+              className="lg:text-xl sm:text-lg text-center"
             >
               Мы помогаем сдать аттестацию с первого раза — честно, эффективно и по делу.
             </p>
@@ -176,9 +176,9 @@ export default function Home() {
             ))}
           </div>
           <div className="sm:flex sm:justify-center max-sm:mx-10 max-lg:my-3">
-            <Link data-aos="zoom-in" data-aos-delay={`${100}`} href="#">
+            <Link data-aos="zoom-in" data-aos-delay={100} href="#">
               <Button className="sm:px-20 px-5 py-3 green shadow-lg w-full">
-                <span className="font-semibold text-xl max-md:text-lg t-black">
+                <span className="font-semibold lg:text-xl sm:text-lg t-black">
                   Получить консультацию
                 </span>
               </Button>

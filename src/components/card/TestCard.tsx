@@ -22,23 +22,23 @@ export default function TestCard({ test, aos = 'fade-up', delay = '0' }: Props) 
         </h3>
       </div>
       <div className="flex justify-center mb-2">
-        <ul className="text-lg flex flex-col gap-2">
-          {test.questions && (
-            <li className="flex items-center gap-2 before:content-['•'] before:text-[var(--orange)] before:text-3xl before:leading-none">
-              {test.questions}
+        <ul className="lg:text-xl text-lg flex flex-col gap-2">
+          {test.options.map((option, index) => (
+            <li
+              key={index}
+              className="flex items-center gap-2 before:content-['•'] before:text-[var(--orange)] before:text-3xl before:leading-none"
+            >
+              {option}
             </li>
-          )}
-          {test.duration && (
-            <li className="flex items-center gap-2 before:content-['•'] before:text-[var(--orange)] before:text-3xl before:leading-none">
-              {test.duration}
-            </li>
-          )}
+          ))}
         </ul>
       </div>
 
       <Link href={test.href} className="w-full flex justify-center mt-3">
-        <Button className="font-semibold bg-[var(--green)] text-md xl:text-xl max-lg:text-sm max-sm:text-base hover:brightness-115 shadow-lg active:brightness-115 focus:brightness-115 transition-transform hover:scale-[1.04] w-2/3 max-lg:w-3/5 max-sm:w-4/5">
-          Начать тест
+        <Button className="green shadow-lg w-2/3 max-lg:w-3/5 max-sm:w-4/5 px-5 py-3">
+          <span className="font-semibold text-md xl:text-xl max-lg:text-sm max-sm:text-base">
+            Начать тест
+          </span>
         </Button>
       </Link>
     </div>
