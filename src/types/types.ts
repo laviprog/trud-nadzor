@@ -18,8 +18,7 @@ export type TestInfo = {
   title: string;
   icon: React.ReactNode;
   href: string;
-  questions: string;
-  duration: string;
+  options: string[];
 };
 
 export type Question = {
@@ -27,4 +26,14 @@ export type Question = {
   text: string;
   options: string[];
   correct: number;
+};
+
+export type FAQData = {
+  question: string;
+  answer: string;
+};
+
+export type ServiceDataType = {
+  title: string;
+  mainImageUrl: string;
 };

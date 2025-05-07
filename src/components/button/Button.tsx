@@ -1,4 +1,5 @@
-import { ComponentPropsWithoutRef } from 'react';
+import React, { ComponentPropsWithoutRef } from 'react';
+import clsx from 'clsx';
 
 export default function Button({
   children,
@@ -11,7 +12,10 @@ export default function Button({
   ComponentPropsWithoutRef<'button'>) {
   return (
     <button
-      className={`text-[var(--black)] py-3 px-5 max-sm:px-3 rounded-xl cursor-pointer ${className}`}
+      className={clsx(
+        'rounded-xl hover:scale-[1.04] cursor-pointer hover:brightness-110',
+        className
+      )}
       {...props}
     >
       {children}

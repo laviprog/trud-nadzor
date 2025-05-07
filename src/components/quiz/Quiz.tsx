@@ -128,7 +128,7 @@ export default function Quiz({
                     />
                   </div>
                   <div className="flex justify-center">
-                    <div className="flex justify-center gap-5 max-md:flex-col max-md:w-100">
+                    <div className="flex justify-center gap-5 max-md:flex-col max-md:w-100 font-semibold">
                       <button
                         onClick={() => router.push('/testirovanie')}
                         className="cursor-pointer py-3 px-6 bg-[var(--orange)] rounded-xl transition hover:scale-[1.04] hover:brightness-110"

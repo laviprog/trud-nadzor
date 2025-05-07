@@ -35,6 +35,42 @@ section[id] {
   scroll-margin-top: 72px;
 }
 
+.orange {
+  background-color: var(--orange);
+}
+
+.green {
+  background-color: var(--green);
+}
+
+.black {
+  background-color: var(--white);
+}
+
+.dark {
+  background-color: var(--dark);
+}
+
+.white {
+  background-color: var(--white);
+}
+
+.t-white {
+  color: var(--white);
+}
+
+.t-dark {
+  color: var(--dark);
+}
+
+.t-black {
+  color: var(--black);
+}
+
+.t-orange {
+  color: var(--orange);
+}
+
 .height-full {
   min-height: calc(var(--client-height) - 72px);
 }
