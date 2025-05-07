@@ -119,14 +119,17 @@ export default function Home() {
               >
                 <Link href="/testirovanie">
                   <Button className="orange shadow-lg w-full px-5 py-3">
-                    <span className="font-semibold text-md xl:text-xl max-lg:text-sm max-sm:text-base t-black">
+                    <span className="font-semibold xl:text-xl text-lg t-black max-sm:hidden">
                       Проверить уровень знаний
+                    </span>
+                    <span className="font-semibold t-black sm:hidden text-lg">
+                      Проверить знания
                     </span>
                   </Button>
                 </Link>
                 <Link href="/#form">
                   <Button className="green shadow-lg w-full px-5 py-3">
-                    <span className="font-semibold text-md xl:text-xl max-lg:text-sm max-sm:text-base t-black">
+                    <span className="font-semibold xl:text-xl text-lg t-black">
                       Получить консультацию
                     </span>
                   </Button>
