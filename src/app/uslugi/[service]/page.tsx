@@ -79,7 +79,7 @@ export default async function TestPage({ params }: { params: Promise<{ service: 
                 className="pointer-events-none select-none xl:w-150 lg:w-130 w-100"
                 priority
                 data-aos="zoom-in"
-                data-aos-delay="300"
+                data-aos-delay="500"
               />
             </div>
           </div>
