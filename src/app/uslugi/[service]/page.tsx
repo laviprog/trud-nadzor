@@ -73,8 +73,8 @@ export default async function TestPage({ params }: { params: Promise<{ service: 
             <div className="h-full w-full max-lg:hidden flex items-center">
               <Image
                 src={data.imageUrl}
-                width={2000}
-                height={2000}
+                width={1000}
+                height={1000}
                 alt={`${data.title} изображение`}
                 className="pointer-events-none select-none xl:w-150 lg:w-130 w-100"
                 priority
