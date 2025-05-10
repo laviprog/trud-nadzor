@@ -1,11 +1,11 @@
 export default function FooterContact() {
   return (
     <div className="text-center lg:text-left">
-      <p className="text-xl font-semibold max-lg:mt-8">Контакты</p>
+      <p className="text-2xl font-semibold max-lg:mt-8">Контакты</p>
       <ul className="mt-4 sm:mt-6 space-y-3 text-sm sm:space-y-4">
         <li>
           <a
-            href="mailto:tut_budet_rabochaya_pochta"
+            href="mailto:info@trud-nadzor.ru"
             className="flex items-center justify-center lg:justify-start gap-2 group"
           >
             <svg
@@ -23,14 +23,14 @@ export default function FooterContact() {
               />
             </svg>
             <span className="transition group-hover:text-white/75 text-[15px]">
-              тут будет рабочая почта
+              info@trud-nadzor.ru
             </span>
           </a>
         </li>
 
         <li>
           <a
-            href="tel:+79111111416"
+            href="tel:+7 (499) 390-98-94"
             className="flex items-center justify-center lg:justify-start gap-2 group"
           >
             <svg
@@ -48,7 +48,7 @@ export default function FooterContact() {
               />
             </svg>
             <span className="text-white transition group-hover:text-white/75 text-[15px]">
-              +7 (911) 111-41-16
+              +7 (499) 390-98-94
             </span>
           </a>
         </li>
@@ -73,7 +73,7 @@ export default function FooterContact() {
             />
           </svg>
           <address className="text-white text-sm not-italic text-[15px]">
-            г. Камышин, ул. Ленина, д.1
+            Москва, Щелковское шоссе 100. БЦ «Восточные ворота»
           </address>
         </li>
       </ul>

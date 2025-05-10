@@ -3,7 +3,7 @@ import { tests } from '@/data/tests';
 
 export default function TestsPage() {
   return (
-    <section className="bg-[var(--white)] flex justify-center text-[var(--black)]">
+    <section className="section bg-[var(--white)] flex justify-center text-[var(--black)]">
       <div className="w-[85%] xl:w-6xl height-full flex flex-col justify-center py-3">
         <div className="flex flex-col gap-4 pb-3">
           <h1 data-aos="zoom-in" className="font-bold text-center xl:text-5xl md:text-4xl text-3xl">

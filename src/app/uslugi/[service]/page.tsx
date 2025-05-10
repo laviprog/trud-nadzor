@@ -23,7 +23,7 @@ export default async function TestPage({ params }: { params: Promise<{ service: 
 
   return (
     <>
-      <section className="flex justify-center bg-[var(--white)] text-[var(--black)]">
+      <section className="section flex justify-center bg-[var(--white)] text-[var(--black)]">
         <div className="w-[85%] xl:w-6xl flex flex-col gap-8 items-center">
           <div className="flex justify-around items-center h-full">
             <div className="h-full flex flex-col justify-around lg:py-8">
@@ -116,7 +116,7 @@ export default async function TestPage({ params }: { params: Promise<{ service: 
       {/*  </div>*/}
       {/*</div>*/}
 
-      <section id="reviews" className="flex justify-center">
+      <section id="reviews" className="section flex justify-center">
         <div className="w-[85%] xl:w-6xl flex flex-col gap-8 items-center justify-center">
           <h1 data-aos="fade-up" className="text-5xl font-bold text-center t-orange">
             Отзывы
@@ -127,9 +127,15 @@ export default async function TestPage({ params }: { params: Promise<{ service: 
         </div>
       </section>
 
-      <section id="form" className="flex justify-center bg-[var(--white)] text-[var(--black)]">
+      <section
+        id="form"
+        className="section flex justify-center bg-[var(--white)] text-[var(--black)]"
+      >
         <div className="w-[85%] xl:w-6xl flex flex-col gap-8 items-center justify-center">
-          <ConsultationForm />
+          <ConsultationForm
+            title="Оставьте заявку на консультацию"
+            description="Заполните форму, и мы свяжемся с вами, чтобы обсудить все детали"
+          />
         </div>
       </section>
 

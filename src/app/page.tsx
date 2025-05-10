@@ -15,7 +15,7 @@ import { faqDataMain } from '@/data/FAQ';
 export default function Home() {
   return (
     <>
-      <section className="white flex justify-center">
+      <section className="section white flex justify-center">
         <div className="w-[85%] xl:w-6xl height-full flex flex-col justify-around">
           <div className="flex flex-col items-center gap-5">
             <h1
@@ -149,7 +149,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="flex justify-center">
+      <section className="section flex justify-center">
         <div className="w-[85%] xl:w-6xl height-full flex flex-col justify-around py-3">
           <div className="flex flex-col items-center gap-5">
             <h1
@@ -190,7 +190,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="flex justify-center">
+      <section className="section flex justify-center">
         <div className="w-[85%] xl:w-6xl flex flex-col gap-15 items-center justify-around lg:py-15 py-10">
           <h1
             data-aos="zoom-in"
@@ -205,7 +205,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="services" className="flex justify-center t-white py-10 max-md:py-4">
+      <section id="services" className="section flex justify-center t-white py-10 max-md:py-4">
         <div className="w-[85%] xl:w-6xl flex flex-col justify-around">
           <div className="flex flex-col items-center gap-5">
             <h2 data-aos="zoom-in" className="text-3xl xl:text-4xl text-center font-bold t-orange">
@@ -233,7 +233,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="partners" className="flex justify-center white t-black">
+      <section id="partners" className="section flex justify-center white t-black">
         <div className="w-[85%] xl:w-6xl flex flex-col gap-8 items-center justify-center overflow-hidden">
           <h1 data-aos="fade-up" className="text-5xl font-bold text-center">
             Наши партнеры
@@ -244,7 +244,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="reviews" className="flex justify-center">
+      <section id="reviews" className="section flex justify-center">
         <div className="w-[85%] xl:w-6xl flex flex-col gap-8 items-center justify-center">
           <h1 data-aos="fade-up" className="text-5xl font-bold text-center t-orange">
             Отзывы
@@ -255,9 +255,12 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="form" className="flex justify-center white t-black">
+      <section id="form" className="section flex justify-center white t-black">
         <div className="w-[85%] xl:w-6xl flex flex-col gap-8 items-center justify-center">
-          <ConsultationForm />
+          <ConsultationForm
+            title="Оставьте заявку на консультацию"
+            description="Заполните форму, и мы свяжемся с вами, чтобы обсудить все детали"
+          />
         </div>
       </section>
 

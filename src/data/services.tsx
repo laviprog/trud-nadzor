@@ -499,3 +499,25 @@ export const services: Service[] = [
     reviewsCount: 72,
   },
 ];
+
+export const directionCards = [
+  {
+    icon: <Flame className="h-10 w-10 text-red-500" />,
+    title: 'Теплоэнергетика',
+    description: 'Подготовка специалистов по эксплуатации и надзору за тепловыми установками',
+    href: '/uslugi/teploenergetika',
+  },
+  {
+    icon: <Zap className="h-10 w-10 text-yellow-500" />,
+    title: 'Электроэнергетика',
+    description: 'Аттестация в области эксплуатации электрических сетей и оборудования',
+    href: '/uslugi/elektroenergetika',
+  },
+  {
+    icon: <ShieldCheck className="h-10 w-10 text-blue-500" />,
+    title: 'Промышленная безопасность',
+    description:
+      'Обучение и проверка знаний требований безопасности на опасных производственных объектах',
+    href: '/uslugi/promyshlennaya-bezopasnost',
+  },
+];

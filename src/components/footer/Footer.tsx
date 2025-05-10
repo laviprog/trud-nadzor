@@ -10,19 +10,19 @@ export default function Footer() {
         <FooterNav
           title="О нас"
           items={[
-            { label: 'Company History', href: '/' },
-            { label: 'Meet the Team', href: '/' },
-            { label: 'Employee Handbook', href: '/' },
-            { label: 'Careers', href: '/' },
+            { label: 'Отзывы', href: '/#reviews' },
+            { label: 'Партнёры', href: '/#partners' },
+            { label: 'Контакты', href: '/kontakty' },
+            { label: 'О компании', href: '/o-nas' },
           ]}
         />
+
         <FooterNav
-          title="Сотрудничество"
+          title="Услуги"
           items={[
-            { label: 'Web Development', href: '/' },
-            { label: 'Web Design', href: '/' },
-            { label: 'Marketing', href: '/' },
-            { label: 'Google Ads', href: '/' },
+            { label: 'Теплоэнергетика', href: '/uslugi/teploenergetika' },
+            { label: 'Электроэнергетика', href: '/uslugi/elektroenergetika' },
+            { label: 'Промышленная безопасность', href: '/uslugi/promyshlennaya-bezopasnost' },
           ]}
         />
         <FooterContact />

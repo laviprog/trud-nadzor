@@ -5,7 +5,15 @@ import { useState } from 'react';
 import PhoneInput from 'react-phone-number-input/input';
 import Button from '@/components/button/Button';
 
-export default function ConsultationForm() {
+export default function ConsultationForm({
+  title,
+  description,
+  buttonText = 'Записаться на консультацию',
+}: {
+  title: string;
+  description?: string;
+  buttonText?: string;
+}) {
   const [form, setForm] = useState({
     name: '',
     email: '',
@@ -35,7 +43,7 @@ export default function ConsultationForm() {
 
   return success ? (
     <p
-      data-aos="fade-up"
+      data-aos="zoom-in"
       data-aos-delay="200"
       className="text-center font-medium lg:text-5xl text-3xl"
     >
@@ -44,20 +52,22 @@ export default function ConsultationForm() {
   ) : (
     <>
       <h1
-        data-aos="fade-up"
+        data-aos="zoom-in"
         data-aos-once="true"
         className="text-4xl font-bold text-center max-md:text-3xl"
       >
-        Оставьте заявку на консультацию
+        {title}
       </h1>
-      <p
-        data-aos="fade-up"
-        data-aos-delay="200"
-        data-aos-once="true"
-        className="text-center text-lg max-md:text-base"
-      >
-        Заполните форму, и мы свяжемся с вами, чтобы обсудить все детали.
-      </p>
+      {description ? (
+        <p
+          data-aos="zoom-in"
+          data-aos-delay="200"
+          data-aos-once="true"
+          className="text-center text-lg max-md:text-base"
+        >
+          {description}
+        </p>
+      ) : null}
 
       <form
         onSubmit={handleSubmit}
@@ -102,9 +112,7 @@ export default function ConsultationForm() {
           className="border border-gray-300 rounded-xl p-3 min-h-[100px] focus:border-white focus:outline-none focus:ring-2 focus:ring-[var(--green)]"
         />
         <Button type="submit" className="green py-3 shadow-lg w-full">
-          <span className="font-semibold xl:text-xl text-lg max-sm:hidden">
-            Записаться на консультацию
-          </span>
+          <span className="font-semibold xl:text-xl text-lg max-sm:hidden">{buttonText}</span>
           <span className="font-semibold text-lg sm:hidden">Отправить</span>
         </Button>
       </form>
