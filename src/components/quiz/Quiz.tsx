@@ -88,7 +88,7 @@ export default function Quiz({
   );
 
   return (
-    <section className="flex justify-center bg-[var(--white)] text-[var(--black)] min-h-screen md:py-10 py-3">
+    <section className="section flex justify-center bg-[var(--white)] text-[var(--black)] min-h-screen md:py-10 py-3">
       <div className="w-[85%] xl:w-6xl flex flex-col gap-8 items-center justify-center">
         <h1 className="text-3xl font-bold text-center">{testTitle}</h1>
 

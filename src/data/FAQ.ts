@@ -2,165 +2,112 @@ import { FAQData } from '@/types/types';
 
 export const faqDataMain: FAQData[] = [
   {
-    question: 'What courses do you offer?',
-    answer: `We offer a variety of courses
-                     across subjects like programming,
-                     data science, design, and business
-                     management.`,
+    question: 'Кто обязан проходить аттестацию в Ростехнадзоре?',
+    answer:
+      'Аттестацию должны проходить руководители и специалисты, чья деятельность связана с эксплуатацией опасных производственных объектов (ОПО), включая тепло- и электроустановки, а также объекты, подпадающие под требования промышленной безопасности.',
   },
   {
-    question: 'How long do the courses take?',
-    answer: `Course duration varies; some are
-                     completed in a few hours while others
-                     may take several weeks, depending on the
-                     depth of the content.`,
+    question: 'Как часто необходимо проходить повторную аттестацию?',
+    answer:
+      'Согласно действующим нормативам, периодичность аттестации составляет 5 лет. Однако при изменении должности или переходе на другой объект может потребоваться внеочередная аттестация.',
   },
   {
-    question: 'Are the courses self-paced?',
-    answer: `Yes, our courses are self-paced,
-                     allowing you to learn at your 
-                     own speed and convenience.`,
+    question: 'Какие документы необходимы для прохождения аттестации?',
+    answer:
+      'Необходимы: заявление на аттестацию, копия удостоверения личности, документы об образовании и квалификации, а также подтверждение прохождения обучения по соответствующей программе.',
   },
   {
-    question: 'Do I receive a certificate upon completion?',
-    answer: `Yes, upon completing a course, you will
-                     receive a certificate that you can download
-                     and share.`,
+    question: 'Предоставляется ли удостоверение после успешной аттестации?',
+    answer:
+      'Да, после успешного прохождения аттестации выдается удостоверение установленного образца, подтверждающее квалификацию специалиста.',
   },
   {
-    question: 'Is there a money-back guarantee?',
-    answer: `Absolutely! If you are not satisfied
-                     with a course, you can request a full
-                     refund within 30 days of purchase.`,
-  },
-  {
-    question: 'Can I access the courses on mobile devices?',
-    answer: `Yes, our platform is mobile-friendly,
-                     allowing you to access courses on
-                     smartphones and tablets.`,
+    question: 'Как записаться на подготовку к аттестации?',
+    answer:
+      'Вы можете оставить заявку на нашем сайте, и наш специалист свяжется с вами для уточнения деталей и подбора подходящей программы обучения.',
   },
 ];
 
 const faqDataEl: FAQData[] = [
   {
-    question: 'What courses do you offer?',
-    answer: `We offer a variety of courses
-                     across subjects like programming,
-                     data science, design, and business
-                     management.`,
+    question: 'Кому необходима аттестация по электроэнергетике?',
+    answer:
+      'Аттестация обязательна для специалистов, работающих с электроустановками: электромонтеров, наладчиков, инженеров, мастеров, энергетиков и руководителей.',
   },
   {
-    question: 'How long do the courses take?',
-    answer: `Course duration varies; some are
-                     completed in a few hours while others
-                     may take several weeks, depending on the
-                     depth of the content.`,
+    question: 'Что такое группа допуска по электробезопасности?',
+    answer:
+      'Это уровень квалификации и допуска к работе с электроустановками. Группы бывают от I до V и определяются по уровню напряжения и ответственности.',
   },
   {
-    question: 'Are the courses self-paced?',
-    answer: `Yes, our courses are self-paced,
-                     allowing you to learn at your 
-                     own speed and convenience.`,
+    question: 'Как часто нужно подтверждать группу допуска?',
+    answer:
+      'Проверка знаний по электробезопасности проводится ежегодно, а переаттестация — раз в 5 лет.',
   },
   {
-    question: 'Do I receive a certificate upon completion?',
-    answer: `Yes, upon completing a course, you will
-                     receive a certificate that you can download
-                     and share.`,
+    question: 'Можно ли пройти обучение дистанционно?',
+    answer:
+      'Да, есть удобный онлайн-формат, с возможностью изучения материалов в свободное время и последующей сдачей тестов.',
   },
   {
-    question: 'Is there a money-back guarantee?',
-    answer: `Absolutely! If you are not satisfied
-                     with a course, you can request a full
-                     refund within 30 days of purchase.`,
-  },
-  {
-    question: 'Can I access the courses on mobile devices?',
-    answer: `Yes, our platform is mobile-friendly,
-                     allowing you to access courses on
-                     smartphones and tablets.`,
+    question: 'Что будет, если сотрудник работает без группы допуска?',
+    answer:
+      'Это нарушение может привести к штрафу, отстранению от работы, а при несчастном случае — к уголовной ответственности работодателя.',
   },
 ];
 
 const faqDataTep: FAQData[] = [
   {
-    question: 'What courses do you offer?',
-    answer: `We offer a variety of courses
-                     across subjects like programming,
-                     data science, design, and business
-                     management.`,
+    question: 'Какие разделы включает аттестация по теплоэнергетике?',
+    answer:
+      'Аттестация охватывает эксплуатацию тепловых энергоустановок и тепловых сетей, включая вопросы по безопасности, техническому обслуживанию и нормативным требованиям.',
   },
   {
-    question: 'How long do the courses take?',
-    answer: `Course duration varies; some are
-                     completed in a few hours while others
-                     may take several weeks, depending on the
-                     depth of the content.`,
+    question: 'Можно ли пройти подготовку дистанционно?',
+    answer:
+      'Да, наша организация предлагает онлайн-курсы, позволяющие подготовиться к аттестации в удобное для вас время.',
   },
   {
-    question: 'Are the courses self-paced?',
-    answer: `Yes, our courses are self-paced,
-                     allowing you to learn at your 
-                     own speed and convenience.`,
+    question: 'Какие объекты считаются опасными в теплоэнергетике и требуют аттестации?',
+    answer:
+      'Объекты, включающие в себя котельные установки, тепловые сети, системы горячего водоснабжения и паровые системы, подлежат контролю Ростехнадзора.',
   },
   {
-    question: 'Do I receive a certificate upon completion?',
-    answer: `Yes, upon completing a course, you will
-                     receive a certificate that you can download
-                     and share.`,
+    question: 'Какие области охватываются при аттестации специалистов по теплоэнергетике?',
+    answer:
+      'Эксплуатация котельных, теплообменного оборудования, трубопроводов, систем автоматизации и противопожарной защиты.',
   },
   {
-    question: 'Is there a money-back guarantee?',
-    answer: `Absolutely! If you are not satisfied
-                     with a course, you can request a full
-                     refund within 30 days of purchase.`,
-  },
-  {
-    question: 'Can I access the courses on mobile devices?',
-    answer: `Yes, our platform is mobile-friendly,
-                     allowing you to access courses on
-                     smartphones and tablets.`,
+    question: 'Можно ли пройти переаттестацию заранее?',
+    answer:
+      'Да, допускается пройти переаттестацию за 6 месяцев до окончания срока действия предыдущей.',
   },
 ];
 
 const faqDataPr: FAQData[] = [
   {
-    question: 'What courses do you offer?',
-    answer: `We offer a variety of courses
-                     across subjects like programming,
-                     data science, design, and business
-                     management.`,
+    question: 'Что включает в себя аттестация по промышленной безопасности?',
+    answer:
+      'Аттестация охватывает знание общих требований промышленной безопасности, а также специфических требований в зависимости от отрасли и типа ОПО.',
   },
   {
-    question: 'How long do the courses take?',
-    answer: `Course duration varies; some are
-                     completed in a few hours while others
-                     may take several weeks, depending on the
-                     depth of the content.`,
+    question: 'Какие изменения в аттестации вступили в силу с 2025 года?',
+    answer:
+      'С 1 марта 2025 года вступили в силу новые правила аттестации, утвержденные Постановлением Правительства от 21.10.2024 № 1416, которые уточняют порядок проведения аттестации и требования к специалистам.',
   },
   {
-    question: 'Are the courses self-paced?',
-    answer: `Yes, our courses are self-paced,
-                     allowing you to learn at your 
-                     own speed and convenience.`,
+    question: 'Какие области включает промышленная безопасность?',
+    answer:
+      'Химическое производство, подъемные сооружения, оборудование под давлением, горные работы, объекты газоснабжения и т.д.',
   },
   {
-    question: 'Do I receive a certificate upon completion?',
-    answer: `Yes, upon completing a course, you will
-                     receive a certificate that you can download
-                     and share.`,
+    question: 'Какие типы ОПО требуют обязательной аттестации персонала?',
+    answer:
+      'Все 4 класса опасных производственных объектов (в зависимости от масштаба и рисков), в том числе котельные, газораспределительные сети и лифтовое оборудование.',
   },
   {
-    question: 'Is there a money-back guarantee?',
-    answer: `Absolutely! If you are not satisfied
-                     with a course, you can request a full
-                     refund within 30 days of purchase.`,
-  },
-  {
-    question: 'Can I access the courses on mobile devices?',
-    answer: `Yes, our platform is mobile-friendly,
-                     allowing you to access courses on
-                     smartphones and tablets.`,
+    question: 'Можно ли проходить обучение без отрыва от производства?',
+    answer: 'Да, возможно дистанционное обучение в удобное для вас время.',
   },
 ];
 

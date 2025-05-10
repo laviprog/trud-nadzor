@@ -27,11 +27,8 @@ body {
   font-family: var(--font-monserrat), sans-serif;
 }
 
-section {
+.section {
   min-height: calc(var(--client-height) - 72px);
-}
-
-section[id] {
   scroll-margin-top: 72px;
 }
 
@@ -76,11 +73,8 @@ section[id] {
 }
 
 @media (min-width: 768px) {
-  section {
+  .section {
     min-height: calc(var(--client-height) - 82px);
-  }
-
-  section[id] {
     scroll-margin-top: 82px;
   }
 
@@ -90,11 +84,8 @@ section[id] {
 }
 
 @media (min-width: 1024px) {
-  section {
+  .section {
     min-height: calc(var(--client-height) - 92px);
-  }
-
-  section[id] {
     scroll-margin-top: 92px;
   }
 
@@ -104,11 +95,8 @@ section[id] {
 }
 
 @media (min-width: 1280px) {
-  section {
+  .section {
     min-height: calc(var(--client-height) - 102px);
-  }
-
-  section[id] {
     scroll-margin-top: 102px;
   }
 

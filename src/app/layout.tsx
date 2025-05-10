@@ -6,6 +6,7 @@ import Header from '@/components/header/Header';
 import Footer from '@/components/footer/Footer';
 import ScrollToTopButton from '@/components/scroll/ScrollToTopButton';
 import SetClientHeight from '@/components/SetClientHeight';
+import { Slide, ToastContainer } from 'react-toastify';
 
 const montserrat = Montserrat({
   variable: '--font-montserrat',
@@ -40,6 +41,20 @@ export default function RootLayout({
       <body
         className={`${montserrat.variable} ${openSans.variable} ${playfairDisplay.variable} antialiased`}
       >
+        <ToastContainer
+          position="bottom-right"
+          autoClose={2000}
+          limit={3}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick={false}
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+          theme="light"
+          transition={Slide}
+        />
         <SetClientHeight />
         <AOSInitializer />
         <Header />
