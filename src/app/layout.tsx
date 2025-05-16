@@ -7,6 +7,7 @@ import Footer from '@/components/footer/Footer';
 import ScrollToTopButton from '@/components/scroll/ScrollToTopButton';
 import SetClientHeight from '@/components/SetClientHeight';
 import { Slide, ToastContainer } from 'react-toastify';
+import React from 'react';
 
 const montserrat = Montserrat({
   variable: '--font-montserrat',
@@ -27,7 +28,7 @@ const playfairDisplay = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: 'Труд Надзор',
+  title: 'ТрудНадзор | Подготовка к аттестации в Ростехнадзоре',
   description: 'Подготовим к аттесции в Ростехнадзоре',
 };
 
