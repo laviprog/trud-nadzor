@@ -24,7 +24,7 @@ export default function Card({ number, icon, title, description, ...rest }: Card
     >
       <div className="xl:text-4xl lg:text-3xl text-[26px]">{icon}</div>
       <h3 className="text-xl max-xl:text-lg max-md:text-base font-semibold mb-1">{title}</h3>
-      <p className="max-lg:text-sm">{description}</p>
+      <p className="max-lg:text-sm text-base leading-4.5">{description}</p>
     </div>
   );
 }

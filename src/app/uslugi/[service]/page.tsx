@@ -12,7 +12,7 @@ import { ReviewsCarousel } from '@/components/carousel/ReviewsCarousel';
 
 type TestType = keyof typeof ServiceData;
 
-export default async function TestPage({ params }: { params: Promise<{ service: string }> }) {
+export default async function ServicePage({ params }: { params: Promise<{ service: string }> }) {
   const { service } = await params;
   const testKey = service as TestType;
   const data = ServiceData[testKey];
@@ -36,7 +36,7 @@ export default async function TestPage({ params }: { params: Promise<{ service: 
               <p
                 data-aos="zoom-in"
                 data-aos-delay={200}
-                className="lg:text-xl sm:text-lg text-center"
+                className="lg:text-xl sm:text-lg text-center max-w-[550px]"
               >
                 {data.description}
               </p>

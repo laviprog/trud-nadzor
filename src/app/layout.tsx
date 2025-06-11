@@ -21,12 +21,6 @@ const openSans = Open_Sans({
   weight: ['300', '400', '600', '700'],
 });
 
-const playfairDisplay = Playfair_Display({
-  variable: '--font-playfair-display',
-  subsets: ['latin', 'cyrillic'],
-  weight: ['400', '500', '600', '700'],
-});
-
 export const metadata: Metadata = {
   title: 'ТрудНадзор | Подготовка к аттестации в Ростехнадзоре',
   description: 'Подготовим к аттесции в Ростехнадзоре',
@@ -39,9 +33,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${montserrat.variable} ${openSans.variable} ${playfairDisplay.variable} antialiased`}
-      >
+      <body className={`${montserrat.variable} ${openSans.variable} antialiased`}>
         <ToastContainer
           position="bottom-right"
           autoClose={2000}
