@@ -12,7 +12,7 @@ import { ReviewsCarousel } from '@/components/carousel/ReviewsCarousel';
 
 type TestType = keyof typeof ServiceData;
 
-export default async function TestPage({ params }: { params: Promise<{ service: string }> }) {
+export default async function ServicePage({ params }: { params: Promise<{ service: string }> }) {
   const { service } = await params;
   const testKey = service as TestType;
   const data = ServiceData[testKey];
@@ -25,22 +25,22 @@ export default async function TestPage({ params }: { params: Promise<{ service: 
     <>
       <section className="section flex justify-center bg-[var(--white)] text-[var(--black)]">
         <div className="w-[85%] xl:w-6xl flex flex-col gap-8 items-center">
-          <div className="flex justify-around items-center h-full">
+          <div className="flex justify-around items-center h-full gap-3">
             <div className="h-full flex flex-col justify-around lg:py-8">
               <h1
                 data-aos="zoom-in"
-                className="lg:text-4xl sm:text-3xl text-2xl font-bold text-center"
+                className="lg:text-4xl sm:text-3xl text-2xl font-bold text-center max-sm:leading-5.5 max-sm:py-2"
               >
                 {data.heading}
               </h1>
               <p
                 data-aos="zoom-in"
                 data-aos-delay={200}
-                className="lg:text-xl sm:text-lg text-center"
+                className="lg:text-xl sm:text-lg text-center lg:max-w-[550px] leading-6 max-sm:leading-5 max-sm:pb-2"
               >
                 {data.description}
               </p>
-              <div className="flex flex-wrap gap-2 justify-center items-stretch">
+              <div className="flex flex-wrap gap-2 justify-center items-stretch lg:min-w-[530px]">
                 {data.badges.map(({ icon, children, className, color }, index) => (
                   <Badge index={index} key={index} icon={icon} className={className} color={color}>
                     {children}
@@ -107,14 +107,6 @@ export default async function TestPage({ params }: { params: Promise<{ service: 
           ))}
         </div>
       </div>
-
-      {/*<div className="flex justify-center">*/}
-      {/*  <div className="w-[85%] xl:w-6xl flex flex-col gap-8 items-center justify-center">*/}
-      {/*    <h1 data-aos="fade-up" className="text-4xl font-bold text-center text-[var(--orange)]">*/}
-      {/*      Поможем пройти аттестацию без проблем*/}
-      {/*    </h1>*/}
-      {/*  </div>*/}
-      {/*</div>*/}
 
       <section id="reviews" className="section flex justify-center">
         <div className="w-[85%] xl:w-6xl flex flex-col gap-8 items-center justify-center">

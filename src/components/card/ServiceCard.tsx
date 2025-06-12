@@ -2,7 +2,6 @@
 
 import React from 'react';
 import Link from 'next/link';
-import { FaStar } from 'react-icons/fa';
 import { Service } from '@/types/types';
 import { useRouter } from 'next/navigation';
 
@@ -26,22 +25,7 @@ export default function ServiceCard({ service, aos = 'fade-up', delay = '0' }: P
           <h3 className="xl:text-xl text-lg font-semibold">{service.title}</h3>
         </div>
 
-        <p className="text-sm mb-2">{service.shortDescription}</p>
-        <p className="text-sm mb-1">Формат: {service.format}</p>
-        <p className="text-sm mb-1">Длительность: {service.duration}</p>
-        <p className="text-sm mb-1">Для: {service.target}</p>
-
-        {service.rating && (
-          <div className="flex items-center gap-1 mt-2">
-            {Array.from({ length: 5 }).map((_, i) => (
-              <FaStar
-                key={i}
-                className={`text-sm ${service.rating ? 'text-yellow-400' : 'text-gray-300'}`}
-              />
-            ))}
-            <span className="text-xs">({service.reviewsCount} отзывов)</span>
-          </div>
-        )}
+        <div className="flex flex-col justify-start">{service.content}</div>
 
         <Link
           href={service.link}

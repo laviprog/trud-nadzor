@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { Montserrat, Open_Sans, Playfair_Display } from 'next/font/google';
+import { Montserrat, Open_Sans } from 'next/font/google';
 import './globals.css';
 import AOSInitializer from '@/components/aos/AOSInitializer';
 import Header from '@/components/header/Header';
@@ -7,6 +7,7 @@ import Footer from '@/components/footer/Footer';
 import ScrollToTopButton from '@/components/scroll/ScrollToTopButton';
 import SetClientHeight from '@/components/SetClientHeight';
 import { Slide, ToastContainer } from 'react-toastify';
+import React from 'react';
 
 const montserrat = Montserrat({
   variable: '--font-montserrat',
@@ -20,14 +21,8 @@ const openSans = Open_Sans({
   weight: ['300', '400', '600', '700'],
 });
 
-const playfairDisplay = Playfair_Display({
-  variable: '--font-playfair-display',
-  subsets: ['latin', 'cyrillic'],
-  weight: ['400', '500', '600', '700'],
-});
-
 export const metadata: Metadata = {
-  title: 'Труд Надзор',
+  title: 'ТрудНадзор | Подготовка к аттестации в Ростехнадзоре',
   description: 'Подготовим к аттесции в Ростехнадзоре',
 };
 
@@ -38,9 +33,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${montserrat.variable} ${openSans.variable} ${playfairDisplay.variable} antialiased`}
-      >
+      <body className={`${montserrat.variable} ${openSans.variable} antialiased`}>
         <ToastContainer
           position="bottom-right"
           autoClose={2000}

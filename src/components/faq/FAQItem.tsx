@@ -1,11 +1,13 @@
 'use client';
 
-import { useState } from 'react';
+import { ReactNode, useState } from 'react';
+import clsx from 'clsx';
 
 export default function FAQItem({
   question,
   answer,
-}: Readonly<{ question: string; answer: string }>) {
+  single = false,
+}: Readonly<{ question: string; answer: ReactNode; single?: boolean }>) {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleOpen = () => {
@@ -17,7 +19,7 @@ export default function FAQItem({
       data-aos="fade-right"
       data-aos-delay={100}
       data-aos-offset={10}
-      className="border-b last:border-b-0 py-4"
+      className={clsx('border-b py-4', !single && 'last:border-b-0')}
     >
       <div className="flex justify-between items-center cursor-pointer" onClick={toggleOpen}>
         <h3 className="font-semibold text-lg lg:text-xl flex-1">{question}</h3>
@@ -41,9 +43,9 @@ export default function FAQItem({
         } overflow-hidden`}
       >
         <div className="overflow-hidden">
-          <p className="lg:text-lg">
+          <div className="lg:text-lg">
             <i>{answer}</i>
-          </p>
+          </div>
         </div>
       </div>
     </div>

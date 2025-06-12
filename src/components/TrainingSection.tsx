@@ -6,6 +6,7 @@ import {
   ClipboardCheckIcon,
   HandshakeIcon,
   BadgeCheckIcon,
+  ScrollTextIcon,
 } from 'lucide-react';
 
 const trainingSteps = [
@@ -16,9 +17,9 @@ const trainingSteps = [
     icon: <FileSearchIcon className="w-7 h-7" />,
   },
   {
-    title: 'Обучение с экспертами',
+    title: 'Подготовка к проверке знаний',
     description:
-      'Углублённый курс под руководством опытных преподавателей и экспертов в своей области',
+      'Обучение онлайн по актуальным билетам, в случае необходимости выезд преподавателя на территорию заказчика',
     icon: <GraduationCapIcon className="w-7 h-7" />,
   },
   {
@@ -30,13 +31,19 @@ const trainingSteps = [
   {
     title: 'Индивидуальная поддержка',
     description:
-      'На всём пути с вами работают кураторы — подсказывают, поддерживают и готовят к успешной сдаче',
+      'На всём пути вас сопровождает закрепленный специалист, в том числе готовит и подает пакет документов в РТН для назначения проверки знаний / аттестации',
     icon: <HandshakeIcon className="w-7 h-7" />,
   },
   {
-    title: 'Успешная аттестация',
+    title: 'Успешная проверка знаний',
     description: 'Пройдя подготовку с нами, вы с легкостью пройдете аттестацию',
     icon: <BadgeCheckIcon className="w-7 h-7" />,
+  },
+  {
+    title: 'Получение итоговых документов',
+    description:
+      'Мы берём на себя всю организацию процесса, в том числе получение и доставку итоговых документов',
+    icon: <ScrollTextIcon className="w-7 h-7" />,
   },
 ];
 
@@ -63,7 +70,7 @@ export default function TrainingSection() {
             <div className="flex items-center justify-between space-x-2 mb-1">
               <div className="font-bold lg:text-2xl sm:text-xl text-lg">{step.title}</div>
             </div>
-            <div className="sm:text-lg">{step.description}</div>
+            <div className="sm:text-lg sm:leading-5.5 leading-5">{step.description}</div>
           </div>
         </div>
       ))}

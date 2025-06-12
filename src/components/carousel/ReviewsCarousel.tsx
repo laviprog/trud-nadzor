@@ -8,31 +8,43 @@ import Image from 'next/image';
 import { useState } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import ButtonSwipe from '@/components/carousel/ButtonSwipe';
+import clsx from 'clsx';
 
-const reviews = [
+const letters = [
   {
     id: 1,
-    name: 'Александр Петров',
-    avatar: '/reviews/reviewer1.png',
-    text: 'Отличный сервис! Всё очень понравилось, буду обращаться снова! Отличный сервис! Всё очень понравилось, буду обращаться снова!',
+    image: '/letters/1.png',
+    company: 'МОУ Лучинская СОШ',
   },
   {
     id: 2,
-    name: 'Мария Иванова',
-    avatar: '/reviews/reviewer1.png',
-    text: 'Быстрая обратная связь и качественная работа. Рекомендую! Быстрая обратная связь и качественная работа. Рекомендую!',
+    image: '/letters/2.png',
+    company: 'Инженерная служба района Очаково-Матвеевское',
   },
   {
     id: 3,
-    name: 'Игорь Смирнов',
-    avatar: '/reviews/reviewer1.png',
-    text: 'Всё сделали профессионально и в срок. Спасибо всей команде! Спасибо всей команде!',
+    image: '/letters/3.png',
+    company: 'Научно-производственная фирма «Гефест-Электро»',
   },
   {
     id: 4,
-    name: 'Ольга Кузнецова',
-    avatar: '/reviews/reviewer1.png',
-    text: 'Очень довольна! Персонал вежливый и профессиональный. Спасибо всей команде!',
+    image: '/letters/4.png',
+    company: 'ООО "Взаимный кредит"',
+  },
+  {
+    id: 5,
+    image: '/letters/5.png',
+    company: 'ООО "Киноград"',
+  },
+  {
+    id: 6,
+    image: '/letters/6.png',
+    company: 'ЗАО "Клиник Групп"',
+  },
+  {
+    id: 7,
+    image: '/letters/7.png',
+    company: 'ООО "ЕвроПроект"',
   },
 ];
 
@@ -40,43 +52,40 @@ export function ReviewsCarousel() {
   const [activeIndex, setActiveIndex] = useState(0);
 
   return (
-    <div className="relative w-full py-10">
+    <div className="relative w-full pt-5">
       <Swiper
         modules={[Navigation, Autoplay]}
         breakpoints={{
           0: {
             slidesPerView: 1,
           },
-          1024: {
+          500: {
+            slidesPerView: 2,
+          },
+          900: {
             slidesPerView: 3,
           },
         }}
         centeredSlides
         loop
-        speed={700}
+        speed={1000}
         autoplay={{ delay: 3000 }}
         onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)}
         className="w-full max-w-6xl mx-auto"
       >
-        {reviews.map((review, index) => (
-          <SwiperSlide key={review.id}>
+        {letters.map((letter, index) => (
+          <SwiperSlide key={letter.id}>
             <div className="flex justify-center w-full">
-              <div
-                className={`transition-all duration-300 ease-in-out bg-[var(--white)] ${
-                  index === activeIndex ? 'scale-100' : 'scale-70'
-                } rounded-2xl p-8 flex flex-col items-center justify-center text-[var(--black)] border-4 border-[var(--orange)] lg:max-w-full md:max-w-2/3`}
-              >
-                <div className="w-20 h-20 mb-4 relative">
-                  <Image
-                    src={review.avatar}
-                    alt={review.name}
-                    fill
-                    className="object-cover rounded-full"
-                  />
-                </div>
-                <h3 className="text-xl font-bold mb-2">{review.name}</h3>
-                <p className="text-center">{review.text}</p>
-              </div>
+              <Image
+                src={letter.image}
+                alt={letter.company}
+                width={360}
+                height={360}
+                className={clsx(
+                  'transition-all duration-300 ease-in-out rounded-xl ring-4 ring-[var(--green)]',
+                  index === activeIndex ? 'scale-95' : 'scale-75'
+                )}
+              />
             </div>
           </SwiperSlide>
         ))}

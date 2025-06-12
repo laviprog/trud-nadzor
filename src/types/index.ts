@@ -17,7 +17,7 @@ export interface Article {
 export interface ServiceItem {
   title: string;
   heading: string;
-  description: string;
+  description: ReactNode;
   imageUrl: string;
   badges: BadgeItem[];
   articles: Article[];
