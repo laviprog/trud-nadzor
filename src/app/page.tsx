@@ -191,7 +191,7 @@ export default function Home() {
 
       <section id="reviews" className="section flex justify-center">
         <div className="w-[85%] xl:w-6xl flex flex-col gap-8 items-center justify-center">
-          <h1 data-aos="fade-up" className="text-5xl font-bold text-center t-orange">
+          <h1 data-aos="fade-up" className="text-5xl font-bold text-center t-orange max-sm:pt-5">
             Отзывы
           </h1>
           <div data-aos="fade-up" data-aos-delay="400" className="w-full">

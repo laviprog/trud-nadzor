@@ -10,10 +10,13 @@ import { ChevronLeft, ChevronRight } from 'lucide-react';
 import ButtonSwipe from '@/components/carousel/ButtonSwipe';
 
 const partners = [
-  { id: 1, name: 'Siemens AG', logo: '/partners/siemens.png' },
-  { id: 2, name: 'Schneider Electric SE', logo: '/partners/schneider.png' },
-  { id: 3, name: 'Honeywell International Inc.', logo: '/partners/honeywell.png' },
-  { id: 4, name: 'Rockwell Automation, Inc.', logo: '/partners/rockwell.png' },
+  { id: 1, name: 'КРОК', logo: '/partners/krok.png' },
+  { id: 2, name: 'Азбука вкуса', logo: '/partners/av.png' },
+  { id: 3, name: 'Синнтерра Медиа', logo: '/partners/syn.png' },
+  { id: 4, name: 'ПИК', logo: '/partners/pik.png' },
+  { id: 5, name: 'Level Group', logo: '/partners/level.png' },
+  { id: 6, name: 'Stockmann', logo: '/partners/stockmann.png' },
+  { id: 7, name: 'Павловская гимназия', logo: '/partners/pavlovo_school.png' },
 ];
 
 export function PartnersCarousel() {
@@ -21,14 +24,17 @@ export function PartnersCarousel() {
     <div className="relative w-full">
       <Swiper
         modules={[Autoplay, Navigation, Pagination]}
-        autoplay={{ delay: 3500 }}
+        autoplay={{ delay: 3000 }}
         loop
-        speed={700}
+        speed={1000}
         slidesPerView={3}
         spaceBetween={15}
         breakpoints={{
           0: {
             slidesPerView: 1,
+          },
+          500: {
+            slidesPerView: 2,
           },
           720: {
             slidesPerView: 3,
@@ -42,9 +48,9 @@ export function PartnersCarousel() {
               <Image
                 src={partner.logo}
                 alt={partner.name}
-                width={500}
-                height={500}
-                className="object-contain"
+                width={1000}
+                height={1000}
+                className="object-contain pointer-events-none select-none max-sm:max-h-[280px]"
               />
             </div>
           </SwiperSlide>

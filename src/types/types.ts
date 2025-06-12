@@ -1,16 +1,11 @@
+import { ReactNode } from 'react';
+
 export type Service = {
   id: string;
   title: string;
   icon: React.ReactNode;
-  shortDescription: string;
-  duration: string;
-  format: string;
-  target: string;
-  price: string;
+  content: React.ReactNode;
   link: string;
-  label?: string;
-  rating?: number;
-  reviewsCount?: number;
 };
 
 export type TestInfo = {
@@ -30,10 +25,5 @@ export type Question = {
 
 export type FAQData = {
   question: string;
-  answer: string;
-};
-
-export type ServiceDataType = {
-  title: string;
-  mainImageUrl: string;
+  answer: ReactNode;
 };

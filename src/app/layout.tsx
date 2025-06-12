@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { Montserrat, Open_Sans, Playfair_Display } from 'next/font/google';
+import { Montserrat, Open_Sans } from 'next/font/google';
 import './globals.css';
 import AOSInitializer from '@/components/aos/AOSInitializer';
 import Header from '@/components/header/Header';
