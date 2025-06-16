@@ -9,24 +9,19 @@ interface SocialLink {
 const socials: SocialLink[] = [
   {
     name: 'Telegram',
-    href: '#',
-    icon: <Image src="/socials/tg.png" alt="Telegram" width={35} height={35} />,
-  },
-  {
-    name: 'VKontakte',
-    href: '#',
-    icon: <Image src="/socials/vk.png" alt="Vkontakte" width={35} height={35} />,
+    href: 'https://t.me/linnikIrinka',
+    icon: <Image src="/socials/tg.png" alt="Telegram" width={45} height={45} />,
   },
   {
     name: 'Whatsapp',
-    href: '#',
-    icon: <Image src="/socials/whatsapp.png" alt="WhatsApp" width={35} height={35} />,
+    href: 'https://wa.me/79264803823',
+    icon: <Image src="/socials/whatsapp.png" alt="WhatsApp" width={45} height={45} />,
   },
 ];
 
 export default function SocialLinks() {
   return (
-    <ul className="flex justify-center mt-6 gap-11 lg:justify-start">
+    <ul className="flex justify-center mt-6 gap-7">
       {socials.map((social) => (
         <li key={social.name}>
           <a href={social.href} target="_blank" rel="noopener noreferrer">

@@ -475,7 +475,7 @@ export const ServiceData: Record<ServiceKey, ServiceItem> = {
         main: (
           <>
             <FAQItem
-              question="1. Промышленная безопасность"
+              question="А. Промышленная безопасность"
               answer={
                 <div className="flex flex-col">
                   <span>1. Общие требования промышленной безопасности</span>
@@ -484,7 +484,7 @@ export const ServiceData: Record<ServiceKey, ServiceItem> = {
               }
             />
             <FAQItem
-              question="2. Специальные требования промышленной безопасности"
+              question="Б. Специальные требования промышленной безопасности"
               answer={
                 <div className="flex flex-col">
                   <span>
@@ -525,7 +525,7 @@ export const ServiceData: Record<ServiceKey, ServiceItem> = {
               }
             />
             <FAQItem
-              question="3. Энергетическая безопасность"
+              question="В. Энергетическая безопасность"
               answer={
                 <div className="flex flex-col">
                   <span>3.1 Требования к порядку работы в электроустановках потребителей</span>
@@ -537,7 +537,7 @@ export const ServiceData: Record<ServiceKey, ServiceItem> = {
               }
             />
             <FAQItem
-              question="4. Безопасность гидротехнических сооружений"
+              question="Г. Безопасность гидротехнических сооружений"
               answer={<span>4. Требования безопасности гидротехнических сооружений</span>}
               single={true}
             />

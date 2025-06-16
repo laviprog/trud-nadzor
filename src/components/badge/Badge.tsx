@@ -42,7 +42,7 @@ export default function Badge({ children, icon, className, color = 'green', inde
       )}
     >
       <div className="pr-3">{icon}</div>
-      <span className="lg:text-lg max-sm:text-sm leading-6">{children}</span>
+      <span className="lg:text-lg max-sm:text-sm leading-6 max-sm:leading-4.5">{children}</span>
     </div>
   );
 }
