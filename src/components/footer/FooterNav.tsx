@@ -13,11 +13,7 @@ interface FooterNavProps {
 export default function FooterNav({ title, items }: Readonly<FooterNavProps>) {
   return (
     <div className="text-center lg:text-left">
-      <p
-        className={`font-semibold text-2xl ${title === 'Сотрудничество' && 'max-lg:mt-8'} ${title === 'О нас' && 'max-sm:mt-8'}`}
-      >
-        {title}
-      </p>
+      <p className={`font-semibold text-2xl ${title === 'О нас' && 'max-sm:mt-8'}`}>{title}</p>
       <nav className="mt-4">
         <ul className="space-y-3 text-lg sm:space-y-4">
           {items.map((item) => (

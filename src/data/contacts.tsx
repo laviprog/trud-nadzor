@@ -4,7 +4,7 @@ export const contactItems = [
   {
     icon: <Phone />,
     label: 'Телефон',
-    value: '+7 (499) 390-98-94',
+    value: '+7 (929) 915-21-57',
   },
   {
     icon: <Mail />,
@@ -14,7 +14,7 @@ export const contactItems = [
   {
     icon: <MapPin />,
     label: 'Адрес',
-    value: 'Москва, Щелковское шоссе 100. БЦ «Восточные ворота»',
+    value: '117148, г. Москва, ул. Брусилова, д. 27, помещение V ком 3/3',
   },
   {
     icon: <Clock />,

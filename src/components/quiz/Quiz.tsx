@@ -89,11 +89,11 @@ export default function Quiz({
 
   return (
     <section className="section flex justify-center bg-[var(--white)] text-[var(--black)] min-h-screen md:py-10 py-3">
-      <div className="w-[85%] xl:w-6xl flex flex-col gap-8 items-center justify-center">
+      <div className="w-[85%] xl:w-6xl flex flex-col lg:gap-8 sm:gap-5 gap-3">
         <h1 className="text-3xl font-bold text-center">{testTitle}</h1>
 
         <div className="w-full md:px-10">
-          <div className="w-full bg-gray-200 rounded-full h-3">
+          <div className="w-full bg-gray-200 rounded-full h-3 sm:mb-5 mb-2">
             <div
               className="bg-[var(--green)] h-3 rounded-full transition-all duration-300"
               style={{ width: `${progress}%` }}
@@ -152,7 +152,7 @@ export default function Quiz({
                   animate={{ opacity: 1, scale: 1 }}
                   exit={{ opacity: 0, scale: 0.9 }}
                   transition={{ duration: 0.4, ease: 'easeInOut' }}
-                  className="w-full space-y-6"
+                  className="w-full sm:space-y-5 space-y-3"
                 >
                   <div className="md:text-lg font-medium">
                     <span className="text-gray-500">
@@ -163,7 +163,7 @@ export default function Quiz({
                     </p>
                   </div>
 
-                  <ul className="flex flex-col gap-4">
+                  <ul className="flex flex-col sm:gap-3 gap-2">
                     {currentQuestion.options.map((option, index) => (
                       <li key={index}>
                         <button

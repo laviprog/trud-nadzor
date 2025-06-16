@@ -1,8 +1,8 @@
 export default function FooterContact() {
   return (
     <div className="text-center lg:text-left">
-      <p className="text-2xl font-semibold max-lg:mt-8">Контакты</p>
-      <ul className="mt-4 sm:mt-6 space-y-3 text-sm sm:space-y-4">
+      <p className="text-2xl font-semibold">Контакты</p>
+      <ul className="mt-4.5 space-y-3 text-sm sm:space-y-4">
         <li>
           <a
             href="mailto:info@trud-nadzor.ru"
@@ -10,7 +10,7 @@ export default function FooterContact() {
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className="w-4 h-4 sm:w-5 sm:h-5 shrink-0"
+              className="w-5 h-5 shrink-0"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
@@ -29,13 +29,10 @@ export default function FooterContact() {
         </li>
 
         <li>
-          <a
-            href="tel:+7 (499) 390-98-94"
-            className="flex items-center justify-center lg:justify-start gap-2 group"
-          >
+          <div className="flex items-center justify-center lg:justify-start gap-2 group">
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className="w-4 h-4 sm:w-5 sm:h-5 text-white shrink-0"
+              className="w-5 h-5 text-white shrink-0"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
@@ -47,15 +44,24 @@ export default function FooterContact() {
                 d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
               />
             </svg>
-            <span className="text-white transition group-hover:text-white/75 text-[15px]">
-              +7 (499) 390-98-94
-            </span>
-          </a>
+            <div className="flex flex-col gap-1">
+              <a href="tel:+79299152157">
+                <span className="text-white hover:text-white/75 text-[15px]">
+                  +7 (929) 915-21-57
+                </span>
+              </a>
+              <a href="tel:+79264803823">
+                <span className="text-white hover:text-white/75 text-[15px]">
+                  +7 (926) 480-38-23
+                </span>
+              </a>
+            </div>
+          </div>
         </li>
-        <li className="flex items-start justify-center lg:justify-start gap-2">
+        <li className="flex items-center justify-center lg:justify-start gap-2">
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            className="w-4 h-4 sm:w-5 sm:h-5 text-white shrink-0"
+            className="w-5 h-5 text-white shrink-0"
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
@@ -73,7 +79,7 @@ export default function FooterContact() {
             />
           </svg>
           <address className="text-white text-sm not-italic text-[15px]">
-            Москва, Щелковское шоссе 100. БЦ «Восточные ворота»
+            117148, г. Москва, ул. Брусилова, д. 27, помещение V ком 3/3
           </address>
         </li>
       </ul>

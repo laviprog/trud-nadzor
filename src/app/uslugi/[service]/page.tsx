@@ -29,7 +29,7 @@ export default async function ServicePage({ params }: { params: Promise<{ servic
             <div className="h-full flex flex-col justify-around lg:py-8">
               <h1
                 data-aos="zoom-in"
-                className="lg:text-4xl sm:text-3xl text-2xl font-bold text-center max-sm:leading-5.5 max-sm:py-2"
+                className="lg:text-4xl sm:text-3xl text-2xl font-bold text-center max-sm:leading-6 max-sm:py-2"
               >
                 {data.heading}
               </h1>

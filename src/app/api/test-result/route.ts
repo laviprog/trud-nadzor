@@ -35,7 +35,7 @@ export async function POST(req: Request) {
         </a>
       </div>
       <div style="text-align: center; margin-top: 16px;">
-        <a href="https://trud-nadzor.laft-agancy.ru"
+        <a href="https://trud-nadzor.laft-agancy.ru/#form"
            style="display: inline-block; width: 300px; background-color: #6ed46e; color: #242424; text-decoration: none; padding: 14px 0; border-radius: 6px; font-weight: 600; font-family: 'Monserrat', sans-serif; text-align: center;">
           Записаться на консультацию
         </a>
