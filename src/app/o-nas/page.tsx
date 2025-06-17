@@ -1,5 +1,3 @@
-'use client';
-
 import { Briefcase, Goal, GraduationCap, ShieldCheck, Users } from 'lucide-react';
 import { directionCards } from '@/data/services';
 import DirectionCard from '@/components/card/DirectionCard';

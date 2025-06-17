@@ -1,4 +1,4 @@
-import { ServiceData } from '@/data/services';
+import { METADATA, ServiceData } from '@/data/services';
 import { notFound } from 'next/navigation';
 import FAQ from '@/components/faq/FAQ';
 import { faqDataServices } from '@/data/FAQ';
@@ -9,8 +9,18 @@ import Link from 'next/link';
 import Badge from '@/components/badge/Badge';
 import { ReactNode } from 'react';
 import { ReviewsCarousel } from '@/components/carousel/ReviewsCarousel';
+import type { Metadata } from 'next';
 
 type TestType = keyof typeof ServiceData;
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ service: string }>;
+}): Promise<Metadata> {
+  const { service } = await params;
+  return METADATA[service as TestType];
+}
 
 export default async function ServicePage({ params }: { params: Promise<{ service: string }> }) {
   const { service } = await params;
