@@ -8,6 +8,8 @@ import ScrollToTopButton from '@/components/scroll/ScrollToTopButton';
 import SetClientHeight from '@/components/SetClientHeight';
 import { Slide, ToastContainer } from 'react-toastify';
 import React from 'react';
+import Script from 'next/script';
+import YandexMetrika from '@/components/YandexMetrika';
 
 const montserrat = Montserrat({
   variable: '--font-montserrat',
@@ -75,6 +77,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${montserrat.variable} ${openSans.variable} antialiased`}>
+        <YandexMetrika />
+
         <ToastContainer
           position="bottom-right"
           autoClose={2000}
