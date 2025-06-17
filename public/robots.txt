@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://trud-nadzor.laft-agancy.ru
+
+# Sitemaps
+Sitemap: https://trud-nadzor.laft-agancy.ru/sitemap.xml
