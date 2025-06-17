@@ -43,6 +43,9 @@ importers:
       react-toastify:
         specifier: ^11.0.5
         version: 11.0.5(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
+      react-yandex-metrika:
+        specifier: ^2.6.0
+        version: 2.6.0(prop-types@15.8.1)(react@19.1.0)
       resend:
         specifier: ^4.3.0
         version: 4.5.1(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
@@ -2986,6 +2989,15 @@ packages:
       react: ^18 || ^19
       react-dom: ^18 || ^19
 
+  react-yandex-metrika@2.6.0:
+    resolution:
+      {
+        integrity: sha512-8K4wExsNZtY3DTxh1G8a+zWH9Pg8fw23MJcoJ4I/562qrHRnh7L5nteq3lnNL58dnNQbuuHIRoGgMjIo+r1GjA==,
+      }
+    peerDependencies:
+      prop-types: '*'
+      react: '*'
+
   react@19.1.0:
     resolution:
       {
@@ -5389,6 +5401,11 @@ snapshots:
       clsx: 2.1.1
       react: 19.1.0
       react-dom: 19.1.0(react@19.1.0)
+
+  react-yandex-metrika@2.6.0(prop-types@15.8.1)(react@19.1.0):
+    dependencies:
+      prop-types: 15.8.1
+      react: 19.1.0
 
   react@19.1.0: {}
 
