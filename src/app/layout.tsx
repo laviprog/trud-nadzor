@@ -8,7 +8,6 @@ import ScrollToTopButton from '@/components/scroll/ScrollToTopButton';
 import SetClientHeight from '@/components/SetClientHeight';
 import { Slide, ToastContainer } from 'react-toastify';
 import React from 'react';
-import Script from 'next/script';
 import YandexMetrika from '@/components/YandexMetrika';
 
 const montserrat = Montserrat({
