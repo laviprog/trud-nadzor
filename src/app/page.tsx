@@ -24,14 +24,15 @@ export default function Home() {
                 data-aos="zoom-in"
                 className="xl:text-[42px] xl:leading-12 max-xl:text-4xl max-sm:text-3xl font-bold text-center"
               >
-                Готовы к проверке знаний в Ростехнадзоре?
+                Подготовка к проверке знаний / аттестации в Ростехнадзоре!
               </h1>
               <p
                 data-aos="zoom-in"
                 data-aos-delay={200}
                 className="xl:text-2xl lg:text-xl text-2xl max-sm:text-xl text-center"
               >
-                Профессионально подготовим вас к проверке знаний/аттестации по основным направлениям
+                Профессиональная подготовка к проверке знаний / аттестации в Ростехнадзоре по
+                основным направлениям
               </p>
 
               <div className="flex justify-center">
