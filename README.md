@@ -1,36 +1,75 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# TRUD-NADZOR
+
+**Trud-Nadzor** is a modern, responsive web application built with Next.js for a company specializing in industrial safety, thermal power, and electrical training services.
+
+This project was developed as a commercial website to professionally represent the company, showcase its services, and provide interactive features for user engagement.
+
+## 🔍 Overview
+
+The application provides:
+
+- 🏢 **Detailed company presentation** — About the organization, services, and certifications.
+- 🧾 **Online application submission** — Users can submit requests directly via the site.
+- 🧠 **Knowledge testing** — Built-in quiz/test functionality for users to check their understanding of industrial safety regulations.
+- 💌 **Email Notifications** — Form submissions are sent via [Resend](https://resend.com/) API.
+- 💻 **Modern UI/UX** — Responsive design with smooth animations for an engaging user experience.
+
+## 🛠 Tech Stack
+
+- **Framework:** Next.js 15
+- **Styling:** Tailwind CSS
+- **Animation:** Framer Motion, AOS, Swiper
+- **Email Delivery:** [Resend](https://resend.com/)
+- **Testing Module:** Custom quiz logic
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- Node.js 18+ 
+- Package manager: pnpm, yarn, or npm
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Installation
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+1. **Clone the repository:**
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+    ```bash
+    git clone https://github.com/laviprog/trud-nadzor.git
+    cd trud-nadzor
+    ```
 
-## Learn More
+2. **Set up environment variables:**
 
-To learn more about Next.js, take a look at the following resources:
+   Create .env.local or .env.production file based on the provided .env.example:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+    ```bash
+    cp .env.example .env.local
+    ```
+   Then fill in the required variables
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+3. Install dependencies:
 
-## Deploy on Vercel
+   Choose your preferred package manager:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+    ```bash
+    npm install
+    # or
+    yarn
+    # or
+    pnpm install
+    ```
+4. Run the app locally:
+    ```bash
+    npm run dev
+    # or
+    yarn dev
+    # or
+    pnpm dev
+    ```
+Open http://localhost:3000 to view it in the browser.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 📜 License
+
+This project is provided for **portfolio and demonstration purposes only**.  
+All rights reserved. Unauthorized use or redistribution is prohibited.
+
